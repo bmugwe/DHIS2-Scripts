@@ -1,0 +1,1 @@
+```This python Script will take the numerator and Denominator of a DHIS application and replace the UID with the dataelement Name and the category option combo Name
