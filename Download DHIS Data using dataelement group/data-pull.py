@@ -63,6 +63,51 @@ where
 	and p.periodtypeid = 5;
 
 """
+# Add the output of names for uid for dataelement, orgunit, catcombo
+sqlview_2 = """
+select
+	de.uid as dataelement,
+	de.name as dataElement_name,
+	TO_CHAR(p.startdate ,
+	'YYYYMM') as period,
+	o.uid as orgunit,
+	o.name as org_name,
+	case 
+		when c.uid = 'NhSoXUMPK2K' then 'HllvX50cXC0'
+		else c.uid
+	end as categoryoptioncombo,
+	c.name as DisaggregationName,
+	case 
+		when c.uid = '15' then 'HllvX50cXC0'
+		else ''
+	end as attributeoptioncombo,
+	d.value as value,
+	d.lastupdated as lastupdated,
+
+from
+	datavalue d
+join dataelement de on
+	de.dataelementid = d.dataelementid
+join organisationunit o on
+	o.organisationunitid = d.sourceid
+join categoryoptioncombo c on
+	c.categoryoptioncomboid = d.categoryoptioncomboid
+join "period" p on
+	p.periodid = d.periodid
+where
+	d.dataelementid in (
+	select
+		distinct dataelementid
+	from
+		dataelementgroupmembers d2
+	join dataelementgroup d3 on
+		d3.dataelementgroupid = d2.dataelementgroupid
+	where
+		d3.uid = '${groupuid}')
+	and p.startdate = '${pstart}'
+	and p.enddate = '${pend}'
+	and p.periodtypeid = 5;
+"""
 payload = {}
 headers = {
   'Authorization': f'Basic {auth_coded}'
