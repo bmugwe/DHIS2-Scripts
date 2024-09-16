@@ -3,18 +3,20 @@ import requests
 import pandas as pd
 import io
 import base64
+import os
 
-username = ''
-password = ''
+username = os.getenv("KHIS_USERNAME", '')
+password = os.getenv("KHIS_PASSWORD", '')
 
-domain_name = 'domain.com'
+print(f" Username: {username} - Password: {password}")
+domain_name = 'his.org'
 
 credentials = f"{username}:{password}"
 
 
 auth_coded = base64.b64encode(credentials.encode()).decode('utf-8')
 
-p_url = "https://{domain_name}/api/29/sqlViews/J4LD5Yqi4v3/data.csv?var=groupuid:{}&var=pstart:{}&var=pend:{}"
+p_url = "https://{}/api/29/sqlViews/DUdU4jGEYPm/data.csv?var=groupuid:{}&var=pstart:{}&var=pend:{}"
 
 # change c.uid and the periodtype appropriately
 sql_view_query = """
@@ -67,33 +69,37 @@ where
 sqlview_2 = """
 select
 	de.uid as dataelement,
-	de.name as dataElement_name,
 	TO_CHAR(p.startdate ,
 	'YYYYMM') as period,
 	o.uid as orgunit,
-	o.name as org_name,
+	o.name as facilityName,
+	org2.name,
+	org3.name,
+	org4.name,
 	case 
 		when c.uid = 'NhSoXUMPK2K' then 'HllvX50cXC0'
 		else c.uid
 	end as categoryoptioncombo,
-	c.name as DisaggregationName,
 	case 
 		when c.uid = '15' then 'HllvX50cXC0'
 		else ''
 	end as attributeoptioncombo,
 	d.value as value,
-	d.lastupdated as lastupdated,
-
+	d.storedby as storedby,
+	d.lastupdated as lastupdated
 from
 	datavalue d
 join dataelement de on
 	de.dataelementid = d.dataelementid
-join organisationunit o on
-	o.organisationunitid = d.sourceid
 join categoryoptioncombo c on
 	c.categoryoptioncomboid = d.categoryoptioncomboid
 join "period" p on
 	p.periodid = d.periodid
+join organisationunit o on
+	o.organisationunitid = d.sourceid,
+	organisationunit as org2, 
+	organisationunit as org3,
+	organisationunit as org4
 where
 	d.dataelementid in (
 	select
@@ -103,9 +109,14 @@ where
 	join dataelementgroup d3 on
 		d3.dataelementgroupid = d2.dataelementgroupid
 	where
-		d3.uid = '${groupuid}')
+			d3.uid = '${groupuid}')
 	and p.startdate = '${pstart}'
 	and p.enddate = '${pend}'
+	and o.parentid = org2.organisationunitid
+	and org2.parentid = org3.organisationunitid
+	and org3.parentid = org4.organisationunitid
+	and o.code notnull
+	and o.hierarchylevel in (5)
 	and p.periodtypeid = 5;
 """
 payload = {}
@@ -117,7 +128,7 @@ headers = {
 
 # Fetch Data from the server
 def fetchData(groupuid, pstart, pend):
-    url = p_url.format(groupuid, pstart, pend)
+    url = p_url.format(domain_name,groupuid, pstart, pend)
     try:
         response = requests.request("GET", url, headers=headers, data=payload)
         if response.status_code == 200:
@@ -230,10 +241,10 @@ periods = [
   }
 ]
 dgroups = [
-    {
-        "uid": "fdZJpEtf2Wa",
-        "name": "MOH 731-2 Prevention of Mother-to-Child Transmission Revision 2018",
-    },
+    # {
+    #     "uid": "fdZJpEtf2Wa",
+    #     "name": "MOH 731-2 Prevention of Mother-to-Child Transmission Revision 2018",
+    # },
     {"uid": "z7HEu5CTSgg", "name": "MOH 731-3 HIV and TB treatment Revision 2018"},
     {"uid": "ckpcwmnPE8O", "name": "MOH 731-4 Medical Male Circumcision Revision 2018"},
     {"uid": "gYlOHBR0if2", "name": "MOH 731-5 Post Exposure Prophylaxis Revision 2018"},
