@@ -63,7 +63,7 @@ for i in jphes_indicator['denominator']:
     new_val=i
     for uid in uids:
         oneelemnt = splitSearch(uid)
-        new_val = new_val.replace(uid,oneelemnt)
+        new_val = new_val.replace(uid,oneelemnt).replace('#{', '').replace('}', '')
     new_denominator.append(new_val)
         # print( new_val)
 jphes_indicator['new_denominator'] = new_denominator
