@@ -1,4 +1,12 @@
 .history
+
 .history/*
+
 *.csv
+
 *.zip
+
+
+*.json
+
+*.xlsx
