@@ -18,8 +18,10 @@ credentials = f"{username}:{password}"
 
 auth_coded = base64.b64encode(credentials.encode()).decode("utf-8")
 
-# J4LD5Yqi4v3 - standard    DUdU4jGEYPm   - with id schenames
-p_url = "https://{}/api/29/sqlViews/J4LD5Yqi4v3/data.csv?var=groupuid:{}&var=pstart:{}&var=pend:{}"
+# J4LD5Yqi4v3 - standard    
+# bEz5t8O8JWi - stand with facility filter
+# DUdU4jGEYPm   - with id schenames
+p_url = "https://{}/api/29/sqlViews/bEz5t8O8JWi/data.csv?var=groupuid:{}&var=pstart:{}&var=pend:{}"
 
 # change c.uid and the periodtype appropriately
 sql_view_query = """
@@ -257,7 +259,7 @@ periods = [
         "monthid": 202408,
     }
 ]
-dgroups_2018 = [
+moh731_2018 = [
     {
         "uid": "fdZJpEtf2Wa",
         "name": "MOH 731-2 Prevention of Mother-to-Child Transmission Revision 2018",
@@ -284,7 +286,7 @@ dgroups_2018 = [
         "folder": "2018",
     },
 ]
-dgroups_2023 = [
+moh731_2023 = [
     {
         "uid": "YB5MZbSMAam",
         "name": "MOH 731-1 _ HIV Testing Services & Pre exposure Prophylaxis 2023",
