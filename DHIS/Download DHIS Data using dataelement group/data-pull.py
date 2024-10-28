@@ -21,7 +21,8 @@ auth_coded = base64.b64encode(credentials.encode()).decode("utf-8")
 # J4LD5Yqi4v3 - standard    
 # bEz5t8O8JWi - stand with facility filter
 # DUdU4jGEYPm   - with id schenames
-p_url = "https://{}/api/29/sqlViews/bEz5t8O8JWi/data.csv?var=groupuid:{}&var=pstart:{}&var=pend:{}"
+#  - Eport data based on dataset
+p_url = "https://{}/api/29/sqlViews/vsBpPxqZcHl/data.csv?var=groupuid:{}&var=pstart:{}&var=pend:{}"
 
 # change c.uid and the periodtype appropriately
 sql_view_query = """
@@ -251,12 +252,28 @@ periods = [
         "monthid": 202406,
     },
     {
+        "periodid": '',
+        "periodtypeid": 5,
+        "startdate": "2024-07-01",
+        "enddate": "2024-07-31",
+        "name": "Monthly",
+        "monthid": 202407,
+    },
+    {
         "periodid": 89589792,
         "periodtypeid": 5,
         "startdate": "2024-08-01",
         "enddate": "2024-08-31",
         "name": "Monthly",
         "monthid": 202408,
+    },
+    {
+        "periodid": '',
+        "periodtypeid": 5,
+        "startdate": "2024-09-01",
+        "enddate": "2024-09-30",
+        "name": "Monthly",
+        "monthid": 202409,
     }
 ]
 moh731_2018 = [
@@ -323,7 +340,22 @@ jphes = [
     # {"uid": "b0Zv1uo5960", "name": "JPHES Attribution Data", "folder": "jphes"},
     {"uid": "kAp1STJo0QM", "name": "MOH 711 - Uterotonics", "folder": "jphes"},
 ]
-for group in jphes:
+
+his_jphes = [
+        {
+        "uid": "EnZokILHOeN",
+        "name": "MOH 705 A Outpatient summary < 5 years Revised 2020",
+        "folder": "MOH705"
+    },
+    {"uid": "XoHnrLBL1qB", "name": "MOH 710 Vaccines and Immunisation Rev 2020", "folder": "MOH710"},
+    {
+        "uid": "UpS2bTVcClZ",
+        "name": "MOH 711 Integrated Summary Report",
+        "folder": "MOH711"
+    },  #: Reproductive & Child Health, Medical & Rehabilitation Services Rev 2020
+]
+
+for group in his_jphes:
     combined_df = pd.DataFrame()  # Initialize an empty DataFrame to combine data
 
     for period in periods:
@@ -347,7 +379,7 @@ for group in jphes:
         last_period = periods[-1]["monthid"]
         filename = f'{group["name"]} {first_period} - {last_period} {timenow}.csv'
 
-        combined_df.to_csv(f"{group['folder']}/{filename} ", index=False)
+        combined_df.to_csv(f"{group['folder']}/{filename} ", index=False, encoding='utf-8')
         print(f'{len(combined_df)} records of {group["name"]} saved to {filename}')
     else:
         print(f'No data to save for {group["name"]}')

@@ -2,14 +2,16 @@ import os, requests, io, base64
 import pandas as pd
 
 # credentials 
-username = os.getenv('HISTRACKER_USERNAME', '')
-password = os.getenv('HISTRACKER_PASSWORD', '')
+username = os.getenv('Tracker_username', '')
+password = os.getenv('Tracker_password', '')
 
 credentials = f"{username}:{password}"
-
+print(f"Credentials:  {credentials}")
 encode_auth = base64.b64encode(credentials.encode()).decode('utf-8')
 
-target_system = 'ento.uonbi.ac.ke'
+target_system = 'gbv.health.go.ke'
+
+
 t_url = 'https://{}/api/events.json?program={}&orgUnit=HfVjCurKxh2&skipPaging=true&ouMode=DESCENDANTS' # &trackedEntityInstance
 enr_url = "https://{}/api/trackedEntityInstances/query.json?ou=HfVjCurKxh2&ouMode=DESCENDANTS&order=created:desc&program={}&skipPaging=true"
 
@@ -64,9 +66,13 @@ def deleteEnrollments(target_system, eventid):
         print(f"Error fetching data: {e}")
         
 programs = [
-    {
-        'uid': 'GNIPmRNe57d',
-        'name': 'ENTO- Mosquito Field & Lab'
+    # {
+    #     'uid': 'GNIPmRNe57d',
+    #     'name': 'ENTO- Mosquito Field & Lab'
+    # }
+     {
+        'uid': 'd5mJRTBeXMW',
+        'name': 'SGBV Quality Assessment Tool '
     }
 ]
 
