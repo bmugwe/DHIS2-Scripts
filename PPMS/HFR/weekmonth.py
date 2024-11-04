@@ -10,7 +10,8 @@ import os
 
 # month_attribute = [hfr_month, activeyear - annual, dhismonth_to_be_updated] chnage this to the month being updated, next month
 # month_attribute = [5, 2023, "202301", "202302"]
-month_attribute = [11, 2024, "202407", "202408"]
+# month_attribute = [11, 2024, "202407", "202408"]
+month_attribute = [12, 2024, "202408", "202409"]
 
 url = 'https://partnermanagementsystem.uonbi.ac.ke/api/29/analytics.json?dimension=dx:{}&dimension=lRp2LBbTuM5&dimension=ou:LEVEL-5&dimension=pe:{}&displayProperty=NAME'
 importUrl = 'https://partnermanagementsystem.uonbi.ac.ke/api/dataValueSets'
@@ -230,36 +231,36 @@ def previousMonth():
                     'uid_2': 'MN0qBblAtxk.V30Om65Tj8L',
                     'name_2': 'MV_HFR_TX_CURR x-1',
                 }
-                # ,
-                # {'name': 'MV_TX_NEW_BALANCE',
-                #     'uid': 'bEnZU8ZzR5v',
-                #     'type': 'indicator',
-                #     'uid_2': 'voRkhmFrwP9.alMMbxnPh3n',
-                #     'name_2': 'HFR:Floating Target x-1',
-                #     'defination': '15+, Female'
-                # }
-                # ,
-                # {'name': 'MV_TX_NEW_BALANCE',
-                #     'uid': 'hTqE0bfXibl',
-                #     'type': 'indicator',
-                #     'uid_2': 'voRkhmFrwP9.kX4BLp2Wskc',
-                #     'name_2': 'HFR:Floating Target x-1',
-                #     'defination': '15+, Male'
-                # },
-                # {'name': 'MV_TX_NEW_BALANCE',
-                #     'uid': 'hvkVYc5c0h5',
-                #     'type': 'indicator',
-                #     'uid_2': 'voRkhmFrwP9.FM340uJtNY1',
-                #     'name_2': 'HFR:Floating Target x-1',
-                #     'defination': '<15, Female'
-                # },
-                # {'name': 'MV_TX_NEW_BALANCE',
-                #     'uid': 'Hu6U5udxIsv',
-                #     'type': 'indicator',
-                #     'uid_2': 'voRkhmFrwP9.V30Om65Tj8L',
-                #     'name_2': 'HFR:Floating Target x-1',
-                #     'defination': '<15, Male'
-                # }
+                ,
+                {'name': 'MV_TX_NEW_BALANCE',
+                    'uid': 'bEnZU8ZzR5v',
+                    'type': 'indicator',
+                    'uid_2': 'voRkhmFrwP9.alMMbxnPh3n',
+                    'name_2': 'HFR:Floating Target x-1',
+                    'defination': '15+, Female'
+                }
+                ,
+                {'name': 'MV_TX_NEW_BALANCE',
+                    'uid': 'hTqE0bfXibl',
+                    'type': 'indicator',
+                    'uid_2': 'voRkhmFrwP9.kX4BLp2Wskc',
+                    'name_2': 'HFR:Floating Target x-1',
+                    'defination': '15+, Male'
+                },
+                {'name': 'MV_TX_NEW_BALANCE',
+                    'uid': 'hvkVYc5c0h5',
+                    'type': 'indicator',
+                    'uid_2': 'voRkhmFrwP9.FM340uJtNY1',
+                    'name_2': 'HFR:Floating Target x-1',
+                    'defination': '<15, Female'
+                },
+                {'name': 'MV_TX_NEW_BALANCE',
+                    'uid': 'Hu6U5udxIsv',
+                    'type': 'indicator',
+                    'uid_2': 'voRkhmFrwP9.V30Om65Tj8L',
+                    'name_2': 'HFR:Floating Target x-1',
+                    'defination': '<15, Male'
+                }
                 ]
     for indicator in indicators:
         mx_url = url.format(indicator['uid'], month_attribute[2])

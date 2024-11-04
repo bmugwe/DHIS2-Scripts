@@ -33,8 +33,8 @@ post_systems = [
     # {
     #     "name": "Histracker",
     #     "url": "histracker.health.go.ke",
-    #     "username": "tracker_username",
-    #     "password": "tracker_password",
+    #     "username": "Tracker_username",
+    #     "password": "Tracker_password",
     # }
     # ,
     # {
@@ -56,8 +56,13 @@ post_systems = [
 credentials = f"{username}:{password}"
 auth_coded = base64.b64encode(credentials.encode()).decode("utf-8")
 
+def fetchNewFacilities():
+    pass
+
 
 facilities = ['O85Hs7kBZIu']
+
+# facilities = fetchNewFacilities()
 base_url = "https://hiskenya.org/api/29/organisationUnits/{}.json?fields=id,name,level,displayName,coordinates,phoneNumber,email,contactPerson,openingDate,parent[id,name,parent[name,id]],shortName,code,created,lastUpdated"
 
 payload = {}
