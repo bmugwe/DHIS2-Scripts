@@ -15,7 +15,7 @@ def encodePassword(username,password):
         }
     return encoded_credentials
 
-url = "https://histracker.health.go.ke/api/29/programIndicators"
+url = "https://xxxxx.xxxxx.co.ke/api/29/programIndicators"
 
 
 data_to_create = [
@@ -159,8 +159,8 @@ headers = {
     # 'Authorization': 'Bearer '
 }
 # Replace with your actual username and password
-username = "emutua"
-password = ""
+username = "xxxxxx"
+password = "xxxxxx"
 
 headers['Authorization'] = "Basic " + encodePassword(username, password)
 
