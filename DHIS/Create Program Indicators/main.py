@@ -16,6 +16,7 @@ def encodePassword(username,password):
     return encoded_credentials
 
 url = "https://xxxxxxxxxxxxxxxxx.health.go.ke/api/29/programIndicators"
+url = "https://xxxxx.xxxxx.co.ke/api/29/programIndicators"
 
 
 data_to_create = [
