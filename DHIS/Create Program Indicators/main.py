@@ -15,76 +15,286 @@ def encodePassword(username,password):
         }
     return encoded_credentials
 
-url = "https://histracker.health.go.ke/api/29/programIndicators"
+url = "https://xxxxxxxxxxxxxxxxx.health.go.ke/api/29/programIndicators"
 
 
 data_to_create = [
   {
-    "Inidicator_Name": "NTD - Primary Rk39 Positive Female",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.z0pyJKadFIV} == "1" && A{CcCaXXa1WBy} == "Op_Gender_Female"'
+    "Inidicator_Name": "NTD - Primary I.T.O. Initial Cure Ssg+Pm",
+    "id": "Z5XtptcfcnX",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Dat Negative Female",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.zZ4xphv4pEA} == "2" && A{CcCaXXa1WBy} == "Op_Gender_Female"'
+    "Inidicator_Name": "NTD - Primary I.T.O. Non Response Ssg+Pm",
+    "id": "iwVlVpE48pz",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Aspirate Positive Female",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.RjNdkEgEHzO} == "Negative" && A{CcCaXXa1WBy} == "Op_Gender_Female"'
+    "Inidicator_Name": "NTD - Primary I.T.O. Defaulted Ssg+Pm",
+    "id": "Ji24Mus6pHr",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Rk39 Negative Female",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.z0pyJKadFIV} == "2" && A{CcCaXXa1WBy} == "Op_Gender_Female"'
+    "Inidicator_Name": "NTD - Primary I.T.O. Death Ssg+Pm",
+    "id": "ItAcWopRgvM",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Dat Positive Female",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.zZ4xphv4pEA} == "1" && A{CcCaXXa1WBy} == "Op_Gender_Female"'
+    "Inidicator_Name": "NTD - Relapse I.T.O. Initial Cure Ssg+Pm",
+    "id": "dNTrJadnoWG",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Aspirate Negative Female",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.RjNdkEgEHzO} == "Neg" && A{CcCaXXa1WBy} == "Op_Gender_Female"'
+    "Inidicator_Name": "NTD - Relapse I.T.O. Non Response Ssg+Pm",
+    "id": "NRowmfW01Z3",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Rk39 Positive Male",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.z0pyJKadFIV} == "1" && A{CcCaXXa1WBy} == "Op_Gender_Male"'
+    "Inidicator_Name": "NTD - Relapse I.T.O. Defaulted Ssg+Pm",
+    "id": "WEmxZDVSDcA",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Dat Negative Male",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.zZ4xphv4pEA} == "2" && A{CcCaXXa1WBy} == "Op_Gender_Male"'
+    "Inidicator_Name": "NTD - Relapse I.T.O. Death Ssg+Pm",
+    "id": "x32XQjtnLUh",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Aspirate Positive Male",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.RjNdkEgEHzO} == "Negative" && A{CcCaXXa1WBy} == "Op_Gender_Male"'
+    "Inidicator_Name": "NTD - Others I.T.O. Initial Cure Ssg+Pm",
+    "id": "wfdevrOzuxf",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Rk39 Negative Male",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.z0pyJKadFIV} == "2" && A{CcCaXXa1WBy} == "Op_Gender_Male"'
+    "Inidicator_Name": "NTD - Others I.T.O. Non Response Ssg+Pm",
+    "id": "Wa5eURg28MW",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Dat Positive Male",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.zZ4xphv4pEA} == "1" && A{CcCaXXa1WBy} == "Op_Gender_Male"'
+    "Inidicator_Name": "NTD - Others I.T.O. Defaulted Ssg+Pm",
+    "id": "SVN0aqYSJrk",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
   },
   {
-    "Inidicator_Name": "NTD - Primary Aspirate Negative Male",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "1" && #{k7U9lO69hVm.RjNdkEgEHzO} == "Neg" && A{CcCaXXa1WBy} == "Op_Gender_Male"'
+    "Inidicator_Name": "NTD - Others I.T.O. Death Ssg+Pm",
+    "id": "SNYD1WC5Gtx",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
   },
   {
-    "Inidicator_Name": "NTD - Relapse Aspirate Positive Female",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "2" && #{k7U9lO69hVm.RjNdkEgEHzO} == "Negative" && A{CcCaXXa1WBy} == "Op_Gender_Female"'
+    "Inidicator_Name": "NTD - Primary I.T.O. Initial Cure Ssg",
+    "id": "ZE0QoJBIhDG",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
   },
   {
-    "Inidicator_Name": "NTD - Relapse Aspirate Positive Male",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "2" && #{k7U9lO69hVm.RjNdkEgEHzO} == "Negative" && A{CcCaXXa1WBy} == "Op_Gender_Male"'
+    "Inidicator_Name": "NTD - Primary I.T.O. Non Response Ssg",
+    "id": "Fpwdk46ejB8",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
   },
   {
-    "Inidicator_Name": "NTD - Relapse Aspirate Negative Female",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "2" && #{k7U9lO69hVm.RjNdkEgEHzO} == "Neg" && A{CcCaXXa1WBy} == "Op_Gender_Female"'
+    "Inidicator_Name": "NTD - Primary I.T.O. Defaulted Ssg",
+    "id": "rMgqYlJUVtW",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
   },
   {
-    "Inidicator_Name": "NTD - Relapse Aspirate Negative Male",
-    "filter": '#{k7U9lO69hVm.D8rx2OvdV1M} == "2" && #{k7U9lO69hVm.RjNdkEgEHzO} == "Neg" && A{CcCaXXa1WBy} == "Op_Gender_Male"'
+    "Inidicator_Name": "NTD - Primary I.T.O. Death Ssg",
+    "id": "GPl5ou54Jpr",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse I.T.O. Initial Cure Ssg",
+    "id": "d9qM9qRAZbR",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse I.T.O. Non Response Ssg",
+    "id": "n1hxfgaK3iu",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse I.T.O. Defaulted Ssg",
+    "id": "ovtPLRt1XYl",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse I.T.O. Death Ssg",
+    "id": "nn5FvqcABcs",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+  },
+  {
+    "Inidicator_Name": "NTD - Pkdl I.T.O. Initial Cure Ssg",
+    "id": "lcMHWCnk5fZ",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+  },
+  {
+    "Inidicator_Name": "NTD - Pkdl I.T.O. Non Response Ssg",
+    "id": "J2tLUvMdsaT",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+  },
+  {
+    "Inidicator_Name": "NTD - Pkdl I.T.O. Defaulted Ssg",
+    "id": "veZqksAPVQM",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+  },
+  {
+    "Inidicator_Name": "NTD - Pkdl I.T.O. Death Ssg",
+    "id": "kkiTOOa7Nk0",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others I.T.O. Initial Cure Ssg",
+    "id": "BYCiW98oo4X",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others I.T.O. Non Response Ssg",
+    "id": "LT0Io2FNRbZ",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others I.T.O. Defaulted Ssg",
+    "id": "N067vdL6PM4",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others I.T.O. Death Ssg",
+    "id": "f5iwaLbeXAs",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+  },
+  {
+    "Inidicator_Name": "NTD - Primary I.T.O. Initial Cure Ambisome",
+    "id": "RRk8SMCPnd9",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+  },
+  {
+    "Inidicator_Name": "NTD - Primary I.T.O. Non Response Ambisome",
+    "id": "Z7wcB80zd29",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+  },
+  {
+    "Inidicator_Name": "NTD - Primary I.T.O. Defaulted Ambisome",
+    "id": "yBOTzzLrgtg",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+  },
+  {
+    "Inidicator_Name": "NTD - Primary I.T.O. Death Ambisome",
+    "id": "Ltes8TbmTFk",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse I.T.O. Initial Cure Ambisome",
+    "id": "wPRJBpPC6DZ",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse I.T.O. Non Response Ambisome",
+    "id": "esXrCNWRCPv",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse I.T.O. Defaulted Ambisome",
+    "id": "XBDrGidi0Eh",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse I.T.O. Death Ambisome",
+    "id": "Gv3sOiqWgyS",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others I.T.O. Initial Cure Ambisome",
+    "id": "ABXKCK2hZUP",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others I.T.O. Non Response Ambisome",
+    "id": "u0JBKqEKhRy",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others I.T.O. Defaulted Ambisome",
+    "id": "m7d5pkqhP8m",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others I.T.O. Death Ambisome",
+    "id": "zxEkaYNoROZ",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+  },
+  {
+    "Inidicator_Name": "NTD - Primary F.T.O. # Follow-Up At 6 Months",
+    "id": "hfdyApbK6dn",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && (#{FnNVNqQvesu.rKUnWEvkP0v} !="")'
+  },
+  {
+    "Inidicator_Name": "NTD - Primary F.T.O. Final Definitive Cure",
+    "id": "dgb5ywnMgGM",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="1")'
+  },
+  {
+    "Inidicator_Name": "NTD - Primary F.T.O. Relapse",
+    "id": "U4mUEPwZ0MN",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="2")'
+  },
+  {
+    "Inidicator_Name": "NTD - Primary F.T.O. Death",
+    "id": "wNM0vdUAUox",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="3")'
+  },
+  {
+    "Inidicator_Name": "NTD - Primary F.T.O. Lost To Follow-Up",
+    "id": "hS2Jsof1cpS",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="4")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse F.T.O. # Follow-Up At 6 Months",
+    "id": "uKxVBqMZelr",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && (#{FnNVNqQvesu.rKUnWEvkP0v} !="")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse F.T.O. Final Definitive Cure",
+    "id": "WmC4yh44K2L",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="1")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse F.T.O. Relapse",
+    "id": "luO70jELg4R",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="2")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse F.T.O. Death",
+    "id": "P3yCdYBSB5D",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="3")'
+  },
+  {
+    "Inidicator_Name": "NTD - Relapse F.T.O. Lost To Follow-Up",
+    "id": "hk5fHt0GsRY",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="4")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others F.T.O. # Follow-Up At 6 Months",
+    "id": "bBRKCfbiqo1",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && (#{FnNVNqQvesu.rKUnWEvkP0v} !="")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others F.T.O. Final Definitive Cure",
+    "id": "fX2orhdZA40",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="1")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others F.T.O. Relapse",
+    "id": "Xw8KYNSMmjp",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="2")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others F.T.O. Death",
+    "id": "MSWsNLxJFnQ",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="3")'
+  },
+  {
+    "Inidicator_Name": "NTD - Others F.T.O. Lost To Follow-Up",
+    "id": "HjxKe2dHXTE",
+    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="4")'
   }
 ]
-
 
 
 pay_load = {
@@ -159,13 +369,14 @@ headers = {
     # 'Authorization': 'Bearer '
 }
 # Replace with your actual username and password
-username = "emutua"
-password = ""
+username = "xxxxxxxxxxx"
+password = "xxxxxxxxxxx"
 
 headers['Authorization'] = "Basic " + encodePassword(username, password)
 
 i = 0
 for data in data_to_create:
+    urls=url + f"/{data['id']}"
     try:
         pay_load["name"] = data["Inidicator_Name"]
         pay_load["filter"] = data["filter"]
@@ -176,11 +387,11 @@ for data in data_to_create:
         print("_________--------------------------------------------------------")
         print(pay_load)
 
-        response = requests.request("POST", url, headers=headers, data=payload)
+        response = requests.request("PUT", urls, headers=headers, data=payload)
 
         print(response.text)
         # breakpoint()
-        if response.status_code == 200:
+        if response.status_code == 201 or response.status_code == 200:
             i += 1
             print("Program Indicator created successfully.")
         else:
