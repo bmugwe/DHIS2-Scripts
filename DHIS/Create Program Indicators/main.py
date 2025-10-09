@@ -15,285 +15,165 @@ def encodePassword(username,password):
         }
     return encoded_credentials
 
-url = "https://xxxxxxxxxxxxxxxxx.health.go.ke/api/29/programIndicators"
-url = "https://xxxxx.xxxxx.co.ke/api/29/programIndicators"
+url = f"https://{os.getenv('HISTRACKER')}/api/29/programIndicators"
+# url = "https://xxxxx.xxxxx.co.ke/api/29/programIndicators"
 
 
 data_to_create = [
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Initial Cure Ssg+Pm",
-    "id": "Z5XtptcfcnX",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+    "shortname": "# imported cases Pre-SAC",
+    "name": "NTD-VL - # imported cases Pre-SAC",
+    "filter": '"#{k7U9lO69hVm.pZzDScBGl3X} == "1" && A{w58pAdWdsWW} == "<5"'
   },
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Non Response Ssg+Pm",
-    "id": "iwVlVpE48pz",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+    "shortname": "# imported cases SAC",
+    "name": "NTD-VL - # imported cases SAC",
+    "filter": '"#{k7U9lO69hVm.pZzDScBGl3X} == "1" && A{w58pAdWdsWW} == ">=5" && A{w58pAdWdsWW} == "<=15"'
   },
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Defaulted Ssg+Pm",
-    "id": "Ji24Mus6pHr",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+    "shortname": "# imported cases Adult",
+    "name": "NTD-VL - # imported cases Adult",
+    "filter": '"#{k7U9lO69hVm.pZzDScBGl3X} == "1" && A{w58pAdWdsWW} == ">15"'
   },
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Death Ssg+Pm",
-    "id": "ItAcWopRgvM",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+    "shortname": "# imported cases Unspecified age",
+    "name": "NTD-VL - # imported cases Unspecified age",
+    "filter": '"#{k7U9lO69hVm.pZzDScBGl3X} == "1" && A{w58pAdWdsWW} == ""'
   },
   {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Initial Cure Ssg+Pm",
-    "id": "dNTrJadnoWG",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+    "shortname": "# Primary VL patients Pre-SAC",
+    "name": "NTD-VL - # Primary VL patients Pre-SAC",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && A{w58pAdWdsWW} == "<5"'
   },
   {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Non Response Ssg+Pm",
-    "id": "NRowmfW01Z3",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+    "shortname": "# Primary VL patients SAC",
+    "name": "NTD-VL - # Primary VL patients SAC",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && A{w58pAdWdsWW} == ">=5" && A{w58pAdWdsWW} == "<=15"'
   },
   {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Defaulted Ssg+Pm",
-    "id": "WEmxZDVSDcA",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+    "shortname": "# Primary VL patients Adult",
+    "name": "NTD-VL - # Primary VL patients Adult",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && A{w58pAdWdsWW} == ">15"'
   },
   {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Death Ssg+Pm",
-    "id": "x32XQjtnLUh",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+    "shortname": "# Primary VL patients Unspecified age",
+    "name": "NTD-VL - # Primary VL patients Unspecified age",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && A{w58pAdWdsWW} == ""'
   },
   {
-    "Inidicator_Name": "NTD - Others I.T.O. Initial Cure Ssg+Pm",
-    "id": "wfdevrOzuxf",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+    "shortname": "# Relapse patients Pre-SAC",
+    "name": "NTD-VL - # Relapse patients Pre-SAC",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && A{w58pAdWdsWW} == "<5"'
   },
   {
-    "Inidicator_Name": "NTD - Others I.T.O. Non Response Ssg+Pm",
-    "id": "Wa5eURg28MW",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+    "shortname": "# Relapse patients SAC",
+    "name": "NTD-VL - # Relapse patients SAC",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && A{w58pAdWdsWW} == ">=5" && A{w58pAdWdsWW} == "<=15"'
   },
   {
-    "Inidicator_Name": "NTD - Others I.T.O. Defaulted Ssg+Pm",
-    "id": "SVN0aqYSJrk",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+    "shortname": "# Relapse patients Adult",
+    "name": "NTD-VL - # Relapse patients Adult",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && A{w58pAdWdsWW} == ">15"'
   },
   {
-    "Inidicator_Name": "NTD - Others I.T.O. Death Ssg+Pm",
-    "id": "SNYD1WC5Gtx",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+    "shortname": "# Relapse patients Unspecified age",
+    "name": "NTD-VL - # Relapse patients Unspecified age",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && A{w58pAdWdsWW} == ""'
   },
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Initial Cure Ssg",
-    "id": "ZE0QoJBIhDG",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+    "shortname": "# PKDL patients Pre-SAC",
+    "name": "NTD-VL - # PKDL patients Pre-SAC",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && A{w58pAdWdsWW} == "<5"'
   },
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Non Response Ssg",
-    "id": "Fpwdk46ejB8",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+    "shortname": "# PKDL patients SAC",
+    "name": "NTD-VL - # PKDL patients SAC",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && A{w58pAdWdsWW} == ">=5" && A{w58pAdWdsWW} == "<=15"'
   },
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Defaulted Ssg",
-    "id": "rMgqYlJUVtW",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+    "shortname": "# PKDL patients Adult",
+    "name": "NTD-VL - # PKDL patients Adult",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && A{w58pAdWdsWW} == ">15"'
   },
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Death Ssg",
-    "id": "GPl5ou54Jpr",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+    "shortname": "# PKDL patients Unspecified age",
+    "name": "NTD-VL - # PKDL patients Unspecified age",
+    "filter": '"#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && A{w58pAdWdsWW} == ""'
   },
   {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Initial Cure Ssg",
-    "id": "d9qM9qRAZbR",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+    "shortname": "Treatment failures Primary, SSG+PM",
+    "name": "NTD-VL - Treatment failures Primary, SSG+PM",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2"'
   },
   {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Non Response Ssg",
-    "id": "n1hxfgaK3iu",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+    "shortname": "Treatment failures Primary, SSG only",
+    "name": "NTD-VL - Treatment failures Primary, SSG only",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "3"'
   },
   {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Defaulted Ssg",
-    "id": "ovtPLRt1XYl",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+    "shortname": "Treatment failures Primary, Ambisome",
+    "name": "NTD-VL - Treatment failures Primary, Ambisome",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "5"'
   },
   {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Death Ssg",
-    "id": "nn5FvqcABcs",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+    "shortname": "Treatment failures Primary, Ambisome + Miltefosine",
+    "name": "NTD-VL - Treatment failures Primary, Ambisome + Miltefosine",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "1"'
   },
   {
-    "Inidicator_Name": "NTD - Pkdl I.T.O. Initial Cure Ssg",
-    "id": "lcMHWCnk5fZ",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+    "shortname": "Treatment failures Primary, Other",
+    "name": "NTD-VL - Treatment failures Primary, Other",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "6" && #{YAqgg6142Nn.Jjv8uLxHS80} == "8" && #{YAqgg6142Nn.Jjv8uLxHS80} == "10"'
   },
   {
-    "Inidicator_Name": "NTD - Pkdl I.T.O. Non Response Ssg",
-    "id": "J2tLUvMdsaT",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+    "shortname": "Treatment failures Relapse, SSG+PM",
+    "name": "NTD-VL - Treatment failures Relapse, SSG+PM",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2"'
   },
   {
-    "Inidicator_Name": "NTD - Pkdl I.T.O. Defaulted Ssg",
-    "id": "veZqksAPVQM",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+    "shortname": "Treatment failures Relapse, SSG only",
+    "name": "NTD-VL - Treatment failures Relapse, SSG only",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "3"'
   },
   {
-    "Inidicator_Name": "NTD - Pkdl I.T.O. Death Ssg",
-    "id": "kkiTOOa7Nk0",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+    "shortname": "Treatment failures Relapse, Ambisome",
+    "name": "NTD-VL - Treatment failures Relapse, Ambisome",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "5"'
   },
   {
-    "Inidicator_Name": "NTD - Others I.T.O. Initial Cure Ssg",
-    "id": "BYCiW98oo4X",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+    "shortname": "Treatment failures Relapse, Ambisome + Miltefosine",
+    "name": "NTD-VL - Treatment failures Relapse, Ambisome + Miltefosine",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "1"'
   },
   {
-    "Inidicator_Name": "NTD - Others I.T.O. Non Response Ssg",
-    "id": "LT0Io2FNRbZ",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+    "shortname": "Treatment failures Relapse, Other",
+    "name": "NTD-VL - Treatment failures Relapse, Other",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "6" && #{YAqgg6142Nn.Jjv8uLxHS80} == "8" && #{YAqgg6142Nn.Jjv8uLxHS80} == "10"'
   },
   {
-    "Inidicator_Name": "NTD - Others I.T.O. Defaulted Ssg",
-    "id": "N067vdL6PM4",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
+    "shortname": "Treatment failures PKDL, SSG+PM",
+    "name": "NTD-VL - Treatment failures PKDL, SSG+PM",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "2"'
   },
   {
-    "Inidicator_Name": "NTD - Others I.T.O. Death Ssg",
-    "id": "f5iwaLbeXAs",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "7" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
+    "shortname": "Treatment failures PKDL, SSG only",
+    "name": "NTD-VL - Treatment failures PKDL, SSG only",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "3"'
   },
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Initial Cure Ambisome",
-    "id": "RRk8SMCPnd9",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
+    "shortname": "Treatment failures PKDL, Ambisome",
+    "name": "NTD-VL - Treatment failures PKDL, Ambisome",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "5"'
   },
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Non Response Ambisome",
-    "id": "Z7wcB80zd29",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
+    "shortname": "Treatment failures PKDL, Ambisome + Miltefosine",
+    "name": "NTD-VL - Treatment failures PKDL, Ambisome + Miltefosine",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "1"'
   },
   {
-    "Inidicator_Name": "NTD - Primary I.T.O. Defaulted Ambisome",
-    "id": "yBOTzzLrgtg",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
-  },
-  {
-    "Inidicator_Name": "NTD - Primary I.T.O. Death Ambisome",
-    "id": "Ltes8TbmTFk",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
-  },
-  {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Initial Cure Ambisome",
-    "id": "wPRJBpPC6DZ",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
-  },
-  {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Non Response Ambisome",
-    "id": "esXrCNWRCPv",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
-  },
-  {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Defaulted Ambisome",
-    "id": "XBDrGidi0Eh",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
-  },
-  {
-    "Inidicator_Name": "NTD - Relapse I.T.O. Death Ambisome",
-    "id": "Gv3sOiqWgyS",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
-  },
-  {
-    "Inidicator_Name": "NTD - Others I.T.O. Initial Cure Ambisome",
-    "id": "ABXKCK2hZUP",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "1")'
-  },
-  {
-    "Inidicator_Name": "NTD - Others I.T.O. Non Response Ambisome",
-    "id": "u0JBKqEKhRy",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "2" || #{YAqgg6142Nn.BIzredhqtbr} == "3")'
-  },
-  {
-    "Inidicator_Name": "NTD - Others I.T.O. Defaulted Ambisome",
-    "id": "m7d5pkqhP8m",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "4")'
-  },
-  {
-    "Inidicator_Name": "NTD - Others I.T.O. Death Ambisome",
-    "id": "zxEkaYNoROZ",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && #{YAqgg6142Nn.Jjv8uLxHS80} == "9" && (#{YAqgg6142Nn.BIzredhqtbr} == "5")'
-  },
-  {
-    "Inidicator_Name": "NTD - Primary F.T.O. # Follow-Up At 6 Months",
-    "id": "hfdyApbK6dn",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && (#{FnNVNqQvesu.rKUnWEvkP0v} !="")'
-  },
-  {
-    "Inidicator_Name": "NTD - Primary F.T.O. Final Definitive Cure",
-    "id": "dgb5ywnMgGM",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="1")'
-  },
-  {
-    "Inidicator_Name": "NTD - Primary F.T.O. Relapse",
-    "id": "U4mUEPwZ0MN",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="2")'
-  },
-  {
-    "Inidicator_Name": "NTD - Primary F.T.O. Death",
-    "id": "wNM0vdUAUox",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="3")'
-  },
-  {
-    "Inidicator_Name": "NTD - Primary F.T.O. Lost To Follow-Up",
-    "id": "hS2Jsof1cpS",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "1" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="4")'
-  },
-  {
-    "Inidicator_Name": "NTD - Relapse F.T.O. # Follow-Up At 6 Months",
-    "id": "uKxVBqMZelr",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && (#{FnNVNqQvesu.rKUnWEvkP0v} !="")'
-  },
-  {
-    "Inidicator_Name": "NTD - Relapse F.T.O. Final Definitive Cure",
-    "id": "WmC4yh44K2L",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="1")'
-  },
-  {
-    "Inidicator_Name": "NTD - Relapse F.T.O. Relapse",
-    "id": "luO70jELg4R",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="2")'
-  },
-  {
-    "Inidicator_Name": "NTD - Relapse F.T.O. Death",
-    "id": "P3yCdYBSB5D",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="3")'
-  },
-  {
-    "Inidicator_Name": "NTD - Relapse F.T.O. Lost To Follow-Up",
-    "id": "hk5fHt0GsRY",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "2" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="4")'
-  },
-  {
-    "Inidicator_Name": "NTD - Others F.T.O. # Follow-Up At 6 Months",
-    "id": "bBRKCfbiqo1",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && (#{FnNVNqQvesu.rKUnWEvkP0v} !="")'
-  },
-  {
-    "Inidicator_Name": "NTD - Others F.T.O. Final Definitive Cure",
-    "id": "fX2orhdZA40",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="1")'
-  },
-  {
-    "Inidicator_Name": "NTD - Others F.T.O. Relapse",
-    "id": "Xw8KYNSMmjp",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="2")'
-  },
-  {
-    "Inidicator_Name": "NTD - Others F.T.O. Death",
-    "id": "MSWsNLxJFnQ",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="3")'
-  },
-  {
-    "Inidicator_Name": "NTD - Others F.T.O. Lost To Follow-Up",
-    "id": "HjxKe2dHXTE",
-    "filter": '#{k7U9lO69hVm.Tlj4JRxaFbV} == "4" && (#{FnNVNqQvesu.rKUnWEvkP0v} =="4")'
+    "shortname": "Treatment failures PKDL, Other",
+    "name": "NTD-VL - Treatment failures PKDL, Other",
+    "filter": '"(#{YAqgg6142Nn.BIzredhqtbr} == "2" && (#{YAqgg6142Nn.BIzredhqtbr} == "3" && #{k7U9lO69hVm.Tlj4JRxaFbV} == "3" && #{YAqgg6142Nn.Jjv8uLxHS80} == "6" && #{YAqgg6142Nn.Jjv8uLxHS80} == "8" && #{YAqgg6142Nn.Jjv8uLxHS80} == "10"'
   }
 ]
 
@@ -369,26 +249,48 @@ headers = {
     'Pragma': 'no-cache',
     # 'Authorization': 'Bearer '
 }
-# Replace with your actual username and password
-username = "xxxxxxxxxxx"
-password = "xxxxxxxxxxx"
 
+# Replace with your actual username and password
+username = os.getenv("HISTRACKER_USERNAME", "")
+password = os.getenv("HISTRACKER_PASSWORD", "")
+
+if not username or not password:
+    print("Username and password must be set in environment variables HISTRACKER_USERNAME and HISTRACKER_PASSWORD.")
+    raise ValueError("Username and password must be set in environment variables HISTRACKER_USERNAME and HISTRACKER_PASSWORD.")
+    
 headers['Authorization'] = "Basic " + encodePassword(username, password)
 
 i = 0
 for data in data_to_create:
-    urls=url + f"/{data['id']}"
+    # urls=url + f"/{data['uid']}"
     try:
-        pay_load["name"] = data["Inidicator_Name"]
-        pay_load["filter"] = data["filter"]
-        pay_load["shortName"] = data['Inidicator_Name']
+      # fetch data using the urls and update the fetched payload
+      # Uncomment if you want to update the indicators
+        """
+          response = requests.get(urls, headers=headers)
+          if response.status_code != 200:
+              print(f"Failed to fetch data for {data['name']}. Status code: {response.status_code}")
+              continue
+          fetched_data = response.json()
+        """
+          
+        fetched_data = pay_load.copy()  # Create a copy of the payload to modify
+        
+        fetched_data["name"] = data["name"]
+        fetched_data["filter"] = data["filter"]
+        fetched_data["shortName"] = data['shortname']
+        # Uncomment if you want to update the indicators
+        # fetched_data["id"] = data['uid']
 
-        payload = json.dumps(pay_load)
+        payload = json.dumps(fetched_data)
         print(payload)
         print("_________--------------------------------------------------------")
-        print(pay_load)
+        print(fetched_data)
 
-        response = requests.request("PUT", urls, headers=headers, data=payload)
+        response = requests.request("POST", url, headers=headers, data=payload)
+        
+        # Uncomment if you want to update the indicators
+        # response = requests.request("PUT", urls, headers=headers, data=payload)
 
         print(response.text)
         # breakpoint()
