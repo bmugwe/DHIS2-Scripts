@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sync Started</title>
+</head>
+<body>
+<h3>✅ Data submission started for program: {{ program }}</h3>
+<p>Month: {{ month }}</p>
+<p>Facilities: {{ facilities | join(', ') }}</p>
+<p>Summary aggregation done and data is being sent to DHIS2 in background.</p>
+<a href="/">← Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EMR → DHIS2 Sync Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        select, input { padding: 6px; margin: 5px; }
+        button { padding: 10px 15px; background-color: #2563eb; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #1d4ed8; }
+    </style>
+</head>
+<body>
+<h2>DHIS2 Sync Dashboard</h2>
+<form action="/submit" method="post">
+    <label>Reporting Month:</label>
+    <input type="month" name="month" value="{{ current_month }}" required><br>
+
+    <label>Facility:</label>
+    <select name="facility_code">
+        <option value="ALL">All Facilities</option>
+        {% for f in facilities %}
+        <option value="{{ f.FacilityCode }}">{{ f.FacilityName }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label>Program:</label>
+    <select name="program">
+        {% for p in programs %}
+        <option value="{{ p }}">{{ p }}</option>
+        {% endfor %}
+    </select><br>
+
+    <button type="submit">Send to DHIS2</button>
+</form>
+</body>
+</html>
