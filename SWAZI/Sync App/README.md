@@ -6,16 +6,16 @@
 ### Activate the Virtual Environment
 
 ``` sh
-source venv/bin/activate`
+source venv/bin/activate
 ```
 
 ### Install Dependencies
 ``` sh
-pip install fastapi uvicorn jinja2 pyodbc requests`
+pip install fastapi uvicorn jinja2 pyodbc requests
 ```
 
 ### Spin the server
 
 ``` sh
-uvicorn dhis2_sync_service:app --reload`
+uvicorn dhis2_sync_service:app --reload
 ```
