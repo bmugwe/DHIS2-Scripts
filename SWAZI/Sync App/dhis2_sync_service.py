@@ -7,6 +7,12 @@ import requests
 from datetime import datetime
 import random
 import os
+import pandas as pd
+from typing import List
+
+# read FileExistsError
+anc_data = pd.read_csv('anc_data.csv')
+pmtct_data = pd.read_csv('pmtct_data.csv')
 
 # ----------------------------
 # CONFIG
@@ -18,30 +24,39 @@ DB_CONN_STRING = (
     "UID=sa;"
     "PWD=YourPassword123;"
 )
-DHIS2_URL = "https://play.dhis2.org/2.39.0/api/dataValueSets"
+DHIS2_URL = "https://swz-testhmis.exhaustivesoln.com/dhis/"
 DHIS2_USER = "admin"
-DHIS2_PASS = "district"
+DHIS2_PASS = "Swati@4050"
 
-DATA_ELEMENT_MAP = {
-    "ANC": {
-        "first_anc_visits": "DE_ANC1",
-        "completed_4_visits": "DE_ANC4",
-        "completed_8_visits": "DE_ANC8",
-        "gestation_12_13_weeks": "DE_GEST12",
-        "hb_result": "DE_HB",
-        "bp_risk": "DE_BP_RISK"
-    },
-    "PMTCT": {
-        "tested_hiv": "DE_PMTCT_HIVT",
-        "positive_hiv": "DE_PMTCT_HIVP"
-    }
-}
 
+# Load data element mappings api api/dataStore/EMR_DHIS/Mapping
+def load_data_element_mappings():
+    global DATA_ELEMENT_MAP
+    try:
+        response = requests.get(
+            f"{DHIS2_URL}api/dataStore/EMR_DHIS/Mapping",
+            auth=(DHIS2_USER, DHIS2_PASS),
+            timeout=10
+        )
+        response.raise_for_status()
+        DATA_ELEMENT_MAP = response.json()
+    except Exception as e:
+        print(f"Error loading data element mappings: {e}")
+        exit(1)
+    return DATA_ELEMENT_MAP
+
+DATA_ELEMENT_MAP = load_data_element_mappings()
 # ----------------------------
 # INIT APP
 # ----------------------------
 app = FastAPI(title="EMR → DHIS2 Aggregation Sync")
 templates = Jinja2Templates(directory="templates")
+
+
+
+# 
+# Simulated sync log data (you'll later replace this with DB)
+sync_history = pd.read_csv('sync_log.csv').to_dict(orient='records')
 
 
 # ----------------------------
@@ -52,44 +67,71 @@ def get_connection():
 
 
 def get_facilities():
-    # Ideally: SELECT FacilityCode, FacilityName FROM Facilities
-    # Simulated:
-    return [
-        {"FacilityCode": "FAC001", "FacilityName": "Nairobi Clinic"},
-        {"FacilityCode": "FAC002", "FacilityName": "Mombasa Hospital"},
-        {"FacilityCode": "FAC003", "FacilityName": "Kisumu Health Centre"}
-    ]
+    
+    """
+    This can be either be stored from the MSSQL Database or fetched from DHIS2 orgUnits API.
+    """
+    # Fetch from DHIS2:
+    try:
+        response = requests.get(
+            f"{DHIS2_URL}api/organisationUnits?fields=id,displayName&paging=false",
+            auth=(DHIS2_USER, DHIS2_PASS),
+            timeout=10
+        )
+        response.raise_for_status()
+        org_units = response.json().get("organisationUnits", [])
+        # the first item will be all options
+        # org_units.insert(0, {"id": "ALL", "displayName": "All Facilities"})
+        return [{"FacilityCode": ou["id"], "FacilityName": ou["displayName"]} for ou in org_units]
+    except Exception as e:
+        print(f"Error fetching org units from DHIS2: {e}")
+        # Fallback to hardcoded list or DB fetch
+
 
 
 def get_programs():
     return list(DATA_ELEMENT_MAP.keys())
 
 
-def aggregate_program_data(program: str, period: str, facility_code: str | None = None):
+def aggregate_program_data(program, period, facility_code ):
     """
-    Replace this simulated function with actual SQL or stored procedure.
+    Fetch the data from the SQL using the passed parameters.
+    For demo, we will read from the CSV files.
     """
-    # Example pseudo SQL call:
+    # SQL call:
     # with get_connection() as conn:
     #     cursor = conn.cursor()
     #     cursor.execute("EXEC sp_AggregateANC ?, ?", (period, facility_code))
     #     result = cursor.fetchone()
+    print(f"Aggregating data for Program: {program}, Period: {period}, Facility: {facility_code}")
 
-    # Simulated aggregation result:
+    # aggregation result:
     if program == "ANC":
-        return {
-            "first_anc_visits": random.randint(20, 80),
-            "completed_4_visits": random.randint(10, 40),
-            "completed_8_visits": random.randint(5, 20),
-            "gestation_12_13_weeks": random.randint(5, 30),
-            "hb_result": random.randint(40, 100),
-            "bp_risk": random.randint(2, 10)
-        }
+        anc_emr_data = pd.read_csv('anc_data.csv')
+        filter_data = anc_emr_data[(anc_emr_data['ReportMonth'] == period) & (anc_emr_data['FacilityCode'].isin(facility_code))]
+        if filter_data.empty:
+            return {}
+        # unmelt the dataframe and combine with data element map on the Indicator column to StoredProcName in mapping
+        unmelted = filter_data.melt(id_vars=['Period', 'FacilityCode'], var_name='Indicator', value_name='value')
+        # Map Indicator to data element using DATA_ELEMENT_MAP
+        unmelted['DataElement'] = unmelted['Indicator'].map(DATA_ELEMENT_MAP['ANC'])
+        merged = unmelted.merge(pd.DataFrame.from_dict(DATA_ELEMENT_MAP['ANC'], orient='index', columns=['DataElement']), left_on='Indicator', right_index=True, how='left')
+        # Keep only relevant columns
+        unmelted = merged[['FacilityCode', 'ReportMonth', 'dataElementId', 'categoryOptionComboId', 'value']]
+        # Rename columns to match DHIS2 payload
+        unmelted.columns = ['orgUnit', 'period', 'dataElement', 'categoryOptionCombo', 'value']
+        # Drop rows where DataElement is NaN (no mapping found)
+        unmelted = unmelted.dropna(subset=['DataElement'])
+        # Create summary dictionary
+        summary = dict(zip(unmelted['Indicator'], unmelted['value']))
+        return summary
+
+        
+
+
     elif program == "PMTCT":
-        return {
-            "tested_hiv": random.randint(50, 120),
-            "positive_hiv": random.randint(1, 5)
-        }
+        pmtct_emr_data = pd.read_csv('pmtct_data.csv')
+        
     else:
         return {}
 
@@ -136,6 +178,7 @@ def dashboard(request: Request):
         "programs": programs,
         "current_month": current_month
     })
+    
 
 
 @app.post("/submit", response_class=HTMLResponse)
@@ -143,7 +186,7 @@ async def submit_data(
     request: Request,
     background_tasks: BackgroundTasks,
     month: str = Form(...),
-    facility_code: str = Form("ALL"),
+    facility_code: List(str) = Form(...),
     program: str = Form(...)
 ):
     facilities = [f["FacilityCode"] for f in get_facilities()] if facility_code == "ALL" else [facility_code]
@@ -161,3 +204,13 @@ async def submit_data(
         "facilities": facilities,
         "results": results
     })
+    
+    
+@app.get("/summary", response_class=HTMLResponse)
+async def summary(request: Request):
+    return templates.TemplateResponse(
+        "summary.html",
+        {"request": request, "syncs": sync_history},
+    )
+    
+
