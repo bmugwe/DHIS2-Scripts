@@ -1,36 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>EMR → DHIS2 Sync Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- select2 js for the facility -->
+     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        select, input { padding: 6px; margin: 5px; }
-        button { padding: 10px 15px; background-color: #2563eb; color: white; border: none; cursor: pointer; }
-        button:hover { background-color: #1d4ed8; }
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #2563eb;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
-<body>
-<h2>DHIS2 Sync Dashboard</h2>
-<form action="/submit" method="post">
-    <label>Reporting Month:</label>
-    <input type="month" name="month" value="{{ current_month }}" required><br>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center justify-center p-6">
 
-    <label>Facility:</label>
-    <select name="facility_code">
-        <option value="ALL">All Facilities</option>
-        {% for f in facilities %}
-        <option value="{{ f.FacilityCode }}">{{ f.FacilityName }}</option>
-        {% endfor %}
-    </select><br>
+    <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-md border border-gray-200">
+        <h2 class="text-2xl font-semibold text-center text-blue-700 mb-6">
+            EMR → DHIS2 Sync Dashboard
+        </h2>
 
-    <label>Program:</label>
-    <select name="program">
-        {% for p in programs %}
-        <option value="{{ p }}">{{ p }}</option>
-        {% endfor %}
-    </select><br>
+        <form action="/submit" method="post" id="syncForm" class="space-y-4">
+            <div>
+                <label class="block font-medium text-sm text-gray-600 mb-1">Reporting Month</label>
+                <input type="month" name="month" value="{{ current_month }}" 
+                    class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500" required>
+            </div>
 
-    <button type="submit">Send to DHIS2</button>
-</form>
+            <div>
+                <label class="block font-medium text-sm text-gray-600 mb-1">Facility</label>
+                <select name="facility_code" class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
+                    <option value="ALL">All Facilities</option>
+                    {% for f in facilities %}
+                    <option value="{{ f.FacilityCode }}">{{ f.FacilityName }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label class="block font-medium text-sm text-gray-600 mb-1">Program</label>
+                <select name="program" class="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
+                    {% for p in programs %}
+                    <option value="{{ p }}">{{ p }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="flex justify-center items-center space-x-3">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                    Send to DHIS2
+                </button>
+                <div class="spinner" id="spinner"></div>
+            </div>
+        </form>
+
+        <div id="message" class="text-center mt-4 text-sm"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById("syncForm");
+        const spinner = document.getElementById("spinner");
+        const message = document.getElementById("message");
+        // Initialize select2 for facility dropdown on load
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const facilitySelect = form.querySelector('select[name="facility_code"]');
+            $(facilitySelect).select2({
+                width: '100%',
+                placeholder: "Select a facility",
+                allowClear: true,
+                multiple: true
+            });
+        });
+
+        form.addEventListener("submit", () => {
+            spinner.style.display = "inline-block";
+            message.textContent = "Sending data to DHIS2...";
+        });
+    </script>
 </body>
 </html>
