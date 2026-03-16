@@ -19,7 +19,7 @@ password = os.getenv("KHIS_PASSWORD", "")
 
 
 print(f" Username: {username} - Password: {password}")
-domain_name = "hiskenya.org"
+domain_name = "hiskenya.dha.go.ke"
 
 post_systems = [
     # {
@@ -38,9 +38,9 @@ post_systems = [
     # ,
     {
         "name": "Histracker",
-        "url": "histracker.health.go.ke",
-        "username": "",
-        "password": "",
+        "url": "histracker.dha.go.ke",
+        "username": "KHIS_USERNAME",
+        "password": "KHIS_PASSWORD",
     }
     # ,
     # {
@@ -83,12 +83,12 @@ def fetchNewFacilities():
     pass
 
 
-facilities = ["HfVjCurKxh2"]
+facilities = ["Vtoc8LwKF0b"]
 
 # facilities = fetchNewFacilities()
-base_url = "https://hiskenya.org/api/29/organisationUnits/{}.json?fields=id,name,displayName,coordinates,phoneNumber,email,contactPerson,openingDate,parent[id,name,parent[name,id]],shortName,code,created,lastUpdated,geometry,level"
+base_url = "https://hiskenya.dha.go.ke/api/29/organisationUnits/{}.json?fields=id,name,displayName,coordinates,phoneNumber,email,contactPerson,openingDate,parent[id,name,parent[name,id]],shortName,code,created,lastUpdated,geometry,level"
 
-base_url_2 = "https://histracker.health.go.ke/api/organisationUnits/{}.json"
+base_url_2 = "https://histracker.dha.go.ke/api/organisationUnits/{}.json"
 
 # base_url = "https://test.hiskenya.org/api/29/organisationUnits/{}.json?fields=id,name,level,displayName,coordinates,phoneNumber,email,contactPerson,openingDate,parent[id,name,parent[name,id]],shortName,code,created,lastUpdated"
 
@@ -110,7 +110,7 @@ def fetchFacility(facilityuid):
     payload = {}
     try:
         response = requests.request("GET", url, headers=headers, data=payload)
-        print(f"Response status code: {response}")
+        print(f"Fetch Response status code: {response}")
         if response.status_code == 200 or response.status_code == 201:
             print(f"Fetched facility {facilityuid} successfully")
             return response.json()
@@ -127,7 +127,7 @@ def fetchFacility_2(facilityuid):
     try:
         # breakpoint()
         response = requests.request("GET", url_2, headers=headers_2, data=payload)
-        print(f"Response status code: {response}")
+        print(f"Receiver GET Response status code: {response}")
         if response.status_code == 200 or response.status_code == 201:
             print(f"Fetched facility {facilityuid} successfully")
             return response.json()
@@ -148,6 +148,8 @@ def createFacility(system, payload_send, current_payload):
     p_username = os.getenv(f"{system['username']}", "")
     p_password = os.getenv(f"{system['password']}", "")
     post_credentials = f"{p_username}:{p_password}"
+    print(f" Post Credentials: {post_credentials}")
+    # breakpoint()
     auth_coded_post = base64.b64encode(post_credentials.encode()).decode("utf-8")
     p_headers = {
         "Authorization": f"Basic {auth_coded_post}",
@@ -164,12 +166,14 @@ def createFacility(system, payload_send, current_payload):
     print(f"current_payload: {current_payload}")
     print(f"update url: {update_url}")
 
-    # modify payload dates
-    if current_payload is not None and payload_send is not None:
-        current_payload["geometry"] = payload_send["geometry"]
-    else:
-        print(f"current_payload: {current_payload is None} or payload_send: {payload is None}, skipping geometry update")
-        exit(1)
+    # modify payload metadata to match receiving system
+    if current_payload is not None:
+        current_payload = payload_send
+        if payload_send is not None:
+            current_payload["geometry"] = payload_send["geometry"]
+        else:
+            print(f"current_payload: {current_payload is None} or payload_send: {payload is None}, skipping geometry update")
+            # exit(1)
     # payload_send["lastUpdated"] = payload_send["lastUpdated"].split("T")[0]
     # payload_send["created"] = payload_send["created"].split("T")[0]
 
@@ -181,15 +185,17 @@ def createFacility(system, payload_send, current_payload):
 
     try:
         # Always change the line below to post or put
-        # resp = requests.post(
-        #     url=url, data=json.dumps(payload_send), headers=p_headers, verify=False
-        # )
+        resp = requests.post(
+            url=url, data=json.dumps(payload_send), headers=p_headers, verify=False
+        )
+        print(f"Post Response status code: {resp.status_code}")
         # if the org is in system, make an update
-        # if resp.status_code == 409:
-        #     print(f"Conflict detected, trying to update {system['name']} facility")
-        resp = requests.put(url=update_url, data=json.dumps(payload_send), headers=p_headers, verify=False)
+        if resp.status_code >= 402 or resp.status_code <= 420:
+            print(f"Conflict detected, trying to update {system['name']} facility")
+            resp = requests.put(url=update_url, data=json.dumps(payload_send), headers=p_headers, verify=False)
         print(f"Response status code: {resp.text}")
         # breakpoint()
+        
         if resp.status_code == 200 or resp.status_code == 201:
             print(f"Data posted Successfully")
             resp_json = resp.json()
@@ -204,6 +210,7 @@ def createFacility(system, payload_send, current_payload):
 for facility in facilities:
     resp = fetchFacility(facility)
     current_payload = fetchFacility_2(facility)
+    # breakpoint() 
     if resp != None:
         for post_system in post_systems:
             post_resp = createFacility(post_system, resp, current_payload)
