@@ -83,7 +83,7 @@ def fetchNewFacilities():
     pass
 
 
-facilities = ["Vtoc8LwKF0b"]
+facilities = [""]
 
 # facilities = fetchNewFacilities()
 base_url = "https://hiskenya.dha.go.ke/api/29/organisationUnits/{}.json?fields=id,name,displayName,coordinates,phoneNumber,email,contactPerson,openingDate,parent[id,name,parent[name,id]],shortName,code,created,lastUpdated,geometry,level"

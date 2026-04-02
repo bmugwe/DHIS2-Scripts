@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DHIS2 SQL View Data Fetcher</title>
+    <style>
+      :root {
+        --bg: #0b1220;
+        --panel: #111a2e;
+        --muted: #8aa0c6;
+        --text: #e7eefc;
+        --accent: #3b82f6;
+        --danger: #ef4444;
+        --border: rgba(255, 255, 255, 0.12);
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji";
+        background: radial-gradient(1200px 800px at 25% 0%, #122042, var(--bg));
+        color: var(--text);
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 28px 18px 44px;
+      }
+
+      .title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 18px;
+        letter-spacing: 0.2px;
+        font-weight: 650;
+      }
+
+      .pill {
+        font-size: 12px;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(17, 26, 46, 0.6);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      @media (max-width: 980px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        background: rgba(17, 26, 46, 0.85);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 14px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+      }
+
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 13px;
+        font-weight: 650;
+        color: #cfe0ff;
+        letter-spacing: 0.2px;
+      }
+
+      label {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin: 10px 0 6px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        box-sizing: border-box;
+        background: rgba(11, 18, 32, 0.9);
+        border: 1px solid var(--border);
+        color: var(--text);
+        border-radius: 10px;
+        padding: 10px 10px;
+        outline: none;
+      }
+
+      select[multiple] {
+        min-height: 260px;
+        padding: 10px;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .row3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+      }
+
+      @media (max-width: 980px) {
+        .row,
+        .row3 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      button {
+        width: 100%;
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 11px 14px;
+        font-weight: 650;
+        cursor: pointer;
+        margin-top: 12px;
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .hint {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 8px;
+        line-height: 1.4;
+      }
+
+      .log {
+        margin-top: 12px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+          "Courier New", monospace;
+        font-size: 12px;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        min-height: 110px;
+        white-space: pre-wrap;
+      }
+
+      .error {
+        color: #fecaca;
+        border-color: rgba(239, 68, 68, 0.5);
+      }
+
+      .links a {
+        color: #bfdbfe;
+        text-decoration: none;
+      }
+
+      .links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title">
+        <h1>DHIS2 SQL View Data Fetcher</h1>
+        <div id="status" class="pill">Loading…</div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>1) Select datasets</h2>
+          <label for="datasets">Datasets (multi-select)</label>
+          <select id="datasets" multiple></select>
+          <div class="hint">
+            Tip: use Ctrl/Cmd to multi-select. After selecting datasets, click “Load data elements”.
+          </div>
+
+          <button id="loadDE">Load data elements</button>
+        </div>
+
+        <div class="card">
+          <h2>2) Select data elements</h2>
+          <label for="dataelements">Data elements (multi-select)</label>
+          <select id="dataelements" multiple></select>
+          <div class="hint">
+            For the SQL View variable, we send a single string built from the selected data element IDs.
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>3) SQL View + range + output</h2>
+
+          <label for="sqlviewUid">SQL view UID</label>
+          <input id="sqlviewUid" placeholder="e.g. m8oTYQH2MA3" />
+
+          <div class="row">
+            <div>
+              <label for="yearStart">Year start</label>
+              <input id="yearStart" type="number" value="2024" />
+            </div>
+            <div>
+              <label for="yearEnd">Year end</label>
+              <input id="yearEnd" type="number" value="2026" />
+            </div>
+          </div>
+
+          <label for="outputFilename">Output filename (combined)</label>
+          <input id="outputFilename" value="dhis2_output.csv" />
+
+          <div class="row3">
+            <div>
+              <label for="dateStartVarName">date start var</label>
+              <input id="dateStartVarName" value="date_start" />
+            </div>
+            <div>
+              <label for="dateEndVarName">date end var</label>
+              <input id="dateEndVarName" value="date_end" />
+            </div>
+            <div>
+              <label for="dataElementsVarName">data elements var</label>
+              <input id="dataElementsVarName" value="dataelement_uids" />
+            </div>
+          </div>
+
+          <label for="dataElementsDelimiter">Data elements delimiter</label>
+          <input id="dataElementsDelimiter" value="," />
+
+          <button id="run">Fetch from SQL view</button>
+          <div class="hint">
+            Output: writes per-year CSVs and one combined CSV into the server output directory.
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Run status</h2>
+          <div id="runlog" class="log">Ready.</div>
+          <div id="downloads" class="hint links"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+
+      function selectedValues(selectEl) {
+        return Array.from(selectEl.selectedOptions).map((o) => o.value);
+      }
+
+      function setLog(text, isError = false) {
+        const el = $("runlog");
+        el.textContent = text;
+        el.classList.toggle("error", isError);
+      }
+
+      function setStatus(text) {
+        $("status").textContent = text;
+      }
+
+      async function loadConfig() {
+        const res = await fetch("/api/config");
+        const cfg = await res.json();
+        const ok = cfg.baseUrlSet && cfg.usernameSet;
+        setStatus(ok ? `Configured • output: ${cfg.outputDir}` : "Missing env vars (KHIS / KHIS_USERNAME / KHIS_PASSWORD)");
+      }
+
+      async function loadDatasets() {
+        setStatus("Loading datasets…");
+        const res = await fetch("/api/datasets");
+        if (!res.ok) throw new Error(`Failed loading datasets: ${res.status}`);
+        const data = await res.json();
+        const sel = $("datasets");
+        sel.innerHTML = "";
+        for (const ds of data.dataSets || []) {
+          const opt = document.createElement("option");
+          opt.value = ds.id;
+          opt.textContent = `${ds.name} (${ds.id})`;
+          sel.appendChild(opt);
+        }
+        setStatus("Datasets loaded");
+      }
+
+      async function loadDataElements() {
+        const datasetIds = selectedValues($("datasets"));
+        if (!datasetIds.length) {
+          setLog("Select at least one dataset first.", true);
+          return;
+        }
+
+        setLog("Loading data elements…");
+        const res = await fetch("/api/dataelements", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ datasetIds }),
+        });
+        if (!res.ok) {
+          const txt = await res.text();
+          throw new Error(`Failed loading data elements: ${res.status}\n${txt}`);
+        }
+        const data = await res.json();
+        const sel = $("dataelements");
+        sel.innerHTML = "";
+        for (const de of data.dataElements || []) {
+          const opt = document.createElement("option");
+          opt.value = de.id;
+          opt.textContent = `${de.name} (${de.id})`;
+          sel.appendChild(opt);
+        }
+        setLog(`Loaded ${data.dataElements?.length || 0} data elements.`);
+      }
+
+      async function runFetch() {
+        const datasetIds = selectedValues($("datasets"));
+        const dataElementIds = selectedValues($("dataelements"));
+
+        const payload = {
+          sqlviewUid: $("sqlviewUid").value.trim(),
+          datasetIds,
+          dataElementIds,
+          dataElementsVarName: $("dataElementsVarName").value.trim(),
+          dataElementsDelimiter: $("dataElementsDelimiter").value,
+          dateStartVarName: $("dateStartVarName").value.trim(),
+          dateEndVarName: $("dateEndVarName").value.trim(),
+          yearStart: Number($("yearStart").value),
+          yearEnd: Number($("yearEnd").value),
+          outputFilename: $("outputFilename").value.trim(),
+        };
+
+        $("run").disabled = true;
+        setLog("Running… this may take a while.");
+        $("downloads").innerHTML = "";
+
+        try {
+          const res = await fetch("/api/run", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok || !data.ok) {
+            throw new Error(data.error || `Run failed: ${res.status}`);
+          }
+
+          setLog(`Done. Total rows: ${data.totalRows}\nCombined: ${data.combinedFile}`);
+
+          const links = [];
+          if (data.combinedFile) {
+            links.push(
+              `<div><a href="/api/download?path=${encodeURIComponent(data.combinedFile)}">Download combined</a></div>`
+            );
+          }
+          for (const p of data.perYearFiles || []) {
+            const name = p.split("/").pop();
+            links.push(
+              `<div><a href="/api/download?path=${encodeURIComponent(p)}">Download ${name}</a></div>`
+            );
+          }
+          $("downloads").innerHTML = links.join("");
+        } catch (e) {
+          setLog(String(e?.message || e), true);
+        } finally {
+          $("run").disabled = false;
+        }
+      }
+
+      $("loadDE").addEventListener("click", () => loadDataElements().catch((e) => setLog(String(e), true)));
+      $("run").addEventListener("click", () => runFetch());
+
+      (async () => {
+        try {
+          await loadConfig();
+          await loadDatasets();
+          setLog("Ready.");
+        } catch (e) {
+          setLog(String(e?.message || e), true);
+          setStatus("Error");
+        }
+      })();
+    </script>
+  </body>
+</html>
+

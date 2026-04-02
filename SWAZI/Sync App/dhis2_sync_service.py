@@ -24,9 +24,9 @@ DB_CONN_STRING = (
     "UID=sa;"
     "PWD=YourPassword123;"
 )
-DHIS2_URL = "https://swz-testhmis.exhaustivesoln.com/dhis/"
-DHIS2_USER = "admin"
-DHIS2_PASS = "Swati@4050"
+DHIS2_URL = ""
+DHIS2_USER = ""
+DHIS2_PASS = ""
 
 
 # Load data element mappings api api/dataStore/EMR_DHIS/Mapping
@@ -108,7 +108,7 @@ def aggregate_program_data(program, period, facility_code ):
     # aggregation result:
     if program == "ANC":
         anc_emr_data = pd.read_csv('anc_data.csv')
-        filter_data = anc_emr_data[(anc_emr_data['ReportMonth'] == period) & (anc_emr_data['FacilityCode'].isin(facility_code))]
+        filter_data = anc_emr_data[(anc_emr_data['ReportMonth'] == period) & (anc_emr_data['FacilityCode']==(facility_code))]
         if filter_data.empty:
             return {}
         # unmelt the dataframe and combine with data element map on the Indicator column to StoredProcName in mapping
@@ -186,7 +186,7 @@ async def submit_data(
     request: Request,
     background_tasks: BackgroundTasks,
     month: str = Form(...),
-    facility_code: List(str) = Form(...),
+    facility_code: str = Form(...),
     program: str = Form(...)
 ):
     facilities = [f["FacilityCode"] for f in get_facilities()] if facility_code == "ALL" else [facility_code]
