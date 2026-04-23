@@ -1,0 +1,974 @@
+<script>
+  jQuery(document).ready(function () {
+    jQuery('#tabs').tabs({ collapsible: true });
+  });
+</script>
+<style type="text/css"><span style="color:#ffffff;"></span><span style="background-color:#000000;"></span>#tabs {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+  }
+
+  .form-table {
+    border-collapse: collapse;
+    font-size: 11px;
+    width: 100%;
+  }
+  .form-table td {
+    border: 1px solid #555;
+    padding: 3px 5px;
+    vertical-align: middle;
+  }
+  .form-table input[name="entryfield"] {
+    width: 52px;
+    height: 22px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 11px;
+    display: block;
+    margin: 0 auto;
+  }
+  .form-table input[name="entryfield"]:focus {
+    outline: 1px solid #1565c0;
+    background: #e3f2fd;
+  }
+
+  /* Title row */
+  .tbl-title {
+    background: #1565c0;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11.5px;
+    padding: 4px 6px;
+  }
+
+  /* Column headers - dark grey */
+  .col-hdr {
+    background: #1565c0;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 4px;
+    white-space: nowrap;
+  }
+  /* Sub-group span (Male / Female) - lighter grey */
+  .col-hdr-sub {
+    background: #1565c0;
+    opacity: 0.9;
+    color: #e7e3e3;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 4px;
+  }
+
+  /* Alternating data rows */
+  .row-even td { background: #ffffff; }
+  .row-odd  td { background: #dce9f7; }
+
+  /* N/A shaded cells */
+  .row-even .shaded,
+  .row-odd  .shaded { background: #b0b0b0; }
+
+  .row-label      { white-space: nowrap; }
+  .row-label-bold { font-weight: bold; text-align: center; }
+
+  /* Space between tables */
+  .table-block { margin-bottom: 22px; }
+
+  .tab-content { padding: 12px; }
+</style>
+<div id="tabs">
+<ul>
+	<li><a href="#tab-1">Client Category</a></li>
+	<li><a href="#tab-2">Nutrition Diagnosis</a></li>
+	<li><a href="#tab-3">Nutrition Intervention</a></li>
+	<li><a href="#tab-4">Micronutrient Intervention</a></li>
+	<li><a href="#tab-5">Treatment Outcome</a></li>
+</ul>
+<!-- ═══════════════════════ TAB 1 ═══════════════════════ -->
+
+<div class="tab-content" id="tab-1">
+<div class="table-block">
+<table class="form-table">
+	<tbody>
+		<tr>
+			<td class="tbl-title" colspan="10">CLIENT CATEGORY</td>
+		</tr>
+		<tr>
+			<td class="col-hdr" rowspan="2">Client Type</td>
+			<td class="col-hdr" rowspan="2">Gender</td>
+			<td class="col-hdr">0-5<br />
+			Months</td>
+			<td class="col-hdr">6 &ndash; 59<br />
+			Months</td>
+			<td class="col-hdr">5-9<br />
+			Years</td>
+			<td class="col-hdr">10-17<br />
+			Years</td>
+			<td class="col-hdr">18+<br />
+			Years</td>
+			<td class="col-hdr">PBFW</td>
+			<td class="col-hdr">18 &ndash; 19<br />
+			Years</td>
+			<td class="col-hdr">Total</td>
+		</tr>
+		<tr>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label-bold" rowspan="2">New</td>
+			<td class="row-label">Male</td>
+			<td><input id="TNqwKaVv099-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Client category_New  Male, 0-5 Months ]" /></td>
+			<td><input id="TNqwKaVv099-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Client category_New  Male, 6-59 Months ]" /></td>
+			<td><input id="TNqwKaVv099-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Client category_New  Male, 5-9 Years ]" /></td>
+			<td><input id="TNqwKaVv099-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Client category_New  Male, 10-17 yrs ]" /></td>
+			<td><input id="TNqwKaVv099-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Male, 18+ Years" value="[ MOH 733_Rev 2026_Client category_New  Male, 18+ Years ]" /></td>
+			<td class="shaded"><input id="TNqwKaVv099-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Male, PBFW" value="[ MOH 733_Rev 2026_Client category_New  Male, PBFW ]" disabled /></td>
+			<td><input id="TNqwKaVv099-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Client category_New  Male, 18-19 Years ]" /></td>
+			<td>
+			<p><input id="indicatoro0aIVGBJLcB" indicatorid="o0aIVGBJLcB" name="indicator" readonly="readonly" title="MOH_733B_Rev_2026 Client Category New Male Total" value="[ MOH_733B_Rev_2026 Client Category New Male Total ]" /></p>
+			</td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">Female</td>
+			<td><input id="TNqwKaVv099-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Client category_New  Female, 0-5 Months ]" /></td>
+			<td><input id="TNqwKaVv099-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Client category_New  Female, 6-59 Months ]" /></td>
+			<td><input id="TNqwKaVv099-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Client category_New  Female, 5-9 Years ]" /></td>
+			<td><input id="TNqwKaVv099-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Client category_New  Female, 10-17 yrs ]" /></td>
+			<td><input id="TNqwKaVv099-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Female, 18+ Years" value="[ MOH 733_Rev 2026_Client category_New  Female, 18+ Years ]" /></td>
+			<td><input id="TNqwKaVv099-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Female, PBFW" value="[ MOH 733_Rev 2026_Client category_New  Female, PBFW ]" /></td>
+			<td><input id="TNqwKaVv099-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Client category_New  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Client category_New  Female, 18-19 Years ]" /></td>
+			<td><input id="indicatorAz5F4qLC7dO" indicatorid="Az5F4qLC7dO" name="indicator" readonly="readonly" title="MOH_733B_Rev_2026 Client Category New Female Total" value="[ MOH_733B_Rev_2026 Client Category New Female Total ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label-bold" rowspan="2">Revisit</td>
+			<td class="row-label">Male</td>
+			<td><input id="f9q5lqMmcYj-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Client category_Revisit  Male, 0-5 Months ]" /></td>
+			<td><input id="f9q5lqMmcYj-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Client category_Revisit  Male, 6-59 Months ]" /></td>
+			<td><input id="f9q5lqMmcYj-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Client category_Revisit  Male, 5-9 Years ]" /></td>
+			<td><input id="f9q5lqMmcYj-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Client category_Revisit  Male, 10-17 yrs ]" /></td>
+			<td><input id="f9q5lqMmcYj-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Male, 18+ Years" value="[ MOH 733_Rev 2026_Client category_Revisit  Male, 18+ Years ]" /></td>
+			<td class="shaded"><input id="f9q5lqMmcYj-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Male, PBFW" value="[ MOH 733_Rev 2026_Client category_Revisit  Male, PBFW ]" disabled /></td>
+			<td><input id="f9q5lqMmcYj-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Client category_Revisit  Male, 18-19 Years ]" /></td>
+			<td><input id="indicatorleAmnSxJHk8" indicatorid="leAmnSxJHk8" name="indicator" readonly="readonly" title="MOH_733B_Rev_2026 Client Category Revisit Male Total" value="[ MOH_733B_Rev_2026 Client Category Revisit Male Total ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">Female</td>
+			<td><input id="f9q5lqMmcYj-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Client category_Revisit  Female, 0-5 Months ]" /></td>
+			<td><input id="f9q5lqMmcYj-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Client category_Revisit  Female, 6-59 Months ]" /></td>
+			<td><input id="f9q5lqMmcYj-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Client category_Revisit  Female, 5-9 Years ]" /></td>
+			<td><input id="f9q5lqMmcYj-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Client category_Revisit  Female, 10-17 yrs ]" /></td>
+			<td><input id="f9q5lqMmcYj-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Client category_Revisit  Female, 18-19 Years ]" /></td>
+			<td><input id="f9q5lqMmcYj-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Female, PBFW" value="[ MOH 733_Rev 2026_Client category_Revisit  Female, PBFW ]" /></td>
+			<td><input id="f9q5lqMmcYj-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Client category_Revisit  Female, 18+ Years" value="[ MOH 733_Rev 2026_Client category_Revisit  Female, 18+ Years ]" /></td>
+			<td><input id="indicatorCwhJ01RlAhQ" indicatorid="CwhJ01RlAhQ" name="indicator" readonly="readonly" title="MOH_733B_Rev_2026 Client Category Revisit Female Total" value="[ MOH_733B_Rev_2026 Client Category Revisit Female Total ]" /></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+<!-- ═══════════════════════ TAB 2 ═══════════════════════ -->
+
+<div class="tab-content" id="tab-2"><!-- Number with SAM -->
+<div class="table-block">
+<table class="form-table">
+	<tbody>
+		<tr>
+			<td class="tbl-title" colspan="10">Number with SAM</td>
+		</tr>
+		<tr>
+			<td class="col-hdr" rowspan="2">Age</td>
+			<td class="col-hdr-sub" colspan="4">Male</td>
+			<td class="col-hdr-sub" colspan="4">Female</td>
+		</tr>
+		<tr>
+			<td class="col-hdr">HIV +ve</td>
+			<td class="col-hdr">TB +ve</td>
+			<td class="col-hdr">TB/HIV Coinfected</td>
+			<td class="col-hdr">Gen Pop</td>
+			<td class="col-hdr">HIV +ve</td>
+			<td class="col-hdr">TB +ve</td>
+			<td class="col-hdr">TB/HIV Coinfected</td>
+			<td class="col-hdr">Gen Pop</td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">0-5 Months</td>
+			<td><input id="srczlTNMAGH-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 0-5 Months ]" /></td>
+			<td><input id="xfJRzjQRVGS-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 0-5 Months ]" /></td>
+			<td><input id="TCxFsm5JPSw-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 0-5 Months ]" /></td>
+			<td><input id="MEPyYLuH7S4-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 0-5 Months ]" /></td>
+			<td><input id="srczlTNMAGH-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 0-5 Months ]" /></td>
+			<td><input id="xfJRzjQRVGS-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 0-5 Months ]" /></td>
+			<td><input id="TCxFsm5JPSw-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 0-5 Months ]" /></td>
+			<td><input id="MEPyYLuH7S4-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 0-5 Months ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">6-59 Months</td>
+			<td><input id="srczlTNMAGH-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 6-59 Months ]" /></td>
+			<td><input id="xfJRzjQRVGS-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 6-59 Months ]" /></td>
+			<td><input id="TCxFsm5JPSw-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 6-59 Months ]" /></td>
+			<td><input id="MEPyYLuH7S4-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 6-59 Months ]" /></td>
+			<td><input id="srczlTNMAGH-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 6-59 Months ]" /></td>
+			<td><input id="xfJRzjQRVGS-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 6-59 Months ]" /></td>
+			<td><input id="TCxFsm5JPSw-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 6-59 Months ]" /></td>
+			<td><input id="MEPyYLuH7S4-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 6-59 Months ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">5-9 Years</td>
+			<td><input id="srczlTNMAGH-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 5-9 Years ]" /></td>
+			<td><input id="xfJRzjQRVGS-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 5-9 Years ]" /></td>
+			<td><input id="TCxFsm5JPSw-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 5-9 Years ]" /></td>
+			<td><input id="MEPyYLuH7S4-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 5-9 Years ]" /></td>
+			<td><input id="srczlTNMAGH-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 5-9 Years ]" /></td>
+			<td><input id="xfJRzjQRVGS-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 5-9 Years ]" /></td>
+			<td><input id="TCxFsm5JPSw-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 5-9 Years ]" /></td>
+			<td><input id="MEPyYLuH7S4-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 5-9 Years ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">10-17 Years</td>
+			<td><input id="srczlTNMAGH-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 10-17 yrs ]" /></td>
+			<td><input id="xfJRzjQRVGS-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 10-17 yrs ]" /></td>
+			<td><input id="TCxFsm5JPSw-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 10-17 yrs ]" /></td>
+			<td><input id="MEPyYLuH7S4-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 10-17 yrs ]" /></td>
+			<td><input id="srczlTNMAGH-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 10-17 yrs ]" /></td>
+			<td><input id="xfJRzjQRVGS-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 10-17 yrs ]" /></td>
+			<td><input id="TCxFsm5JPSw-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 10-17 yrs ]" /></td>
+			<td><input id="MEPyYLuH7S4-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 10-17 yrs ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">18+ Years</td>
+			<td><input id="srczlTNMAGH-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 18+ Years ]" /></td>
+			<td><input id="xfJRzjQRVGS-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 18+ Years ]" /></td>
+			<td><input id="TCxFsm5JPSw-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 18+ Years ]" /></td>
+			<td><input id="MEPyYLuH7S4-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 18+ Years ]" /></td>
+			<td><input id="srczlTNMAGH-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 18+ Years ]" /></td>
+			<td><input id="xfJRzjQRVGS-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 18+ Years ]" /></td>
+			<td><input id="TCxFsm5JPSw-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 18+ Years ]" /></td>
+			<td><input id="MEPyYLuH7S4-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 18+ Years ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">PBFW</td>
+			<td class="shaded"><input id="srczlTNMAGH-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, PBFW" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="xfJRzjQRVGS-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Male, PBFW" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Male, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="TCxFsm5JPSw-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, PBFW" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="MEPyYLuH7S4-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, PBFW" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, PBFW ]" disabled /></td>
+			<td><input id="srczlTNMAGH-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, PBFW" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, PBFW ]" /></td>
+			<td><input id="xfJRzjQRVGS-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Female, PBFW" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Female, PBFW ]" /></td>
+			<td><input id="TCxFsm5JPSw-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, PBFW" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, PBFW ]" /></td>
+			<td><input id="MEPyYLuH7S4-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, PBFW" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, PBFW ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">18 &ndash; 19 Years</td>
+			<td><input id="srczlTNMAGH-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Male, 18-19 Years ]" /></td>
+			<td><input id="xfJRzjQRVGS-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Male, 18-19 Years ]" /></td>
+			<td><input id="TCxFsm5JPSw-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Male, 18-19 Years ]" /></td>
+			<td><input id="MEPyYLuH7S4-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Male, 18-19 Years ]" /></td>
+			<td><input id="srczlTNMAGH-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number with SAM_HIV +ve  Female, 18-19 Years ]" /></td>
+			<td><input id="xfJRzjQRVGS-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number with SAM_TB +ve  Female, 18-19 Years ]" /></td>
+			<td><input id="TCxFsm5JPSw-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number with SAM_TB/HIV Coinfected  Female, 18-19 Years ]" /></td>
+			<td><input id="MEPyYLuH7S4-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number with SAM_Gen Pop  Female, 18-19 Years ]" /></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<!-- Number with MAM -->
+
+<div class="table-block">
+<table class="form-table">
+	<tbody>
+		<tr>
+			<td class="tbl-title" colspan="10">Number with MAM</td>
+		</tr>
+		<tr>
+			<td class="col-hdr" rowspan="2">Age</td>
+			<td class="col-hdr-sub" colspan="4">Male</td>
+			<td class="col-hdr-sub" colspan="4">Female</td>
+		</tr>
+		<tr>
+			<td class="col-hdr">HIV +ve</td>
+			<td class="col-hdr">TB +ve</td>
+			<td class="col-hdr">TB/HIV Coinfected</td>
+			<td class="col-hdr">Gen Pop</td>
+			<td class="col-hdr">HIV +ve</td>
+			<td class="col-hdr">TB +ve</td>
+			<td class="col-hdr">TB/HIV Coinfected</td>
+			<td class="col-hdr">Gen Pop</td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">0-5 Months</td>
+			<td><input id="xWwlFJWtQmH-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 0-5 Months ]" /></td>
+			<td><input id="FojJOkDqJTM-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 0-5 Months ]" /></td>
+			<td><input id="dDXIyWdnI39-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 0-5 Months ]" /></td>
+			<td><input id="SUEaMdhTRhm-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 0-5 Months ]" /></td>
+			<td><input id="xWwlFJWtQmH-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 0-5 Months ]" /></td>
+			<td><input id="FojJOkDqJTM-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 0-5 Months ]" /></td>
+			<td><input id="dDXIyWdnI39-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 0-5 Months ]" /></td>
+			<td><input id="SUEaMdhTRhm-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 0-5 Months ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">6-59 Months</td>
+			<td><input id="xWwlFJWtQmH-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 6-59 Months ]" /></td>
+			<td><input id="FojJOkDqJTM-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 6-59 Months ]" /></td>
+			<td><input id="dDXIyWdnI39-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 6-59 Months ]" /></td>
+			<td><input id="SUEaMdhTRhm-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 6-59 Months ]" /></td>
+			<td><input id="xWwlFJWtQmH-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 6-59 Months ]" /></td>
+			<td><input id="FojJOkDqJTM-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 6-59 Months ]" /></td>
+			<td><input id="dDXIyWdnI39-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 6-59 Months ]" /></td>
+			<td><input id="SUEaMdhTRhm-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 6-59 Months ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">5-9 Years</td>
+			<td><input id="xWwlFJWtQmH-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 5-9 Years ]" /></td>
+			<td><input id="FojJOkDqJTM-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 5-9 Years ]" /></td>
+			<td><input id="dDXIyWdnI39-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 5-9 Years ]" /></td>
+			<td><input id="SUEaMdhTRhm-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 5-9 Years ]" /></td>
+			<td><input id="xWwlFJWtQmH-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 5-9 Years ]" /></td>
+			<td><input id="FojJOkDqJTM-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 5-9 Years ]" /></td>
+			<td><input id="dDXIyWdnI39-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 5-9 Years ]" /></td>
+			<td><input id="SUEaMdhTRhm-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 5-9 Years ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">10-17 Years</td>
+			<td><input id="xWwlFJWtQmH-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 10-17 yrs ]" /></td>
+			<td><input id="FojJOkDqJTM-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 10-17 yrs ]" /></td>
+			<td><input id="dDXIyWdnI39-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 10-17 yrs ]" /></td>
+			<td><input id="SUEaMdhTRhm-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 10-17 yrs ]" /></td>
+			<td><input id="xWwlFJWtQmH-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 10-17 yrs ]" /></td>
+			<td><input id="FojJOkDqJTM-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 10-17 yrs ]" /></td>
+			<td><input id="dDXIyWdnI39-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 10-17 yrs ]" /></td>
+			<td><input id="SUEaMdhTRhm-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 10-17 yrs ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">18+ Years</td>
+			<td><input id="xWwlFJWtQmH-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 18+ Years ]" /></td>
+			<td><input id="FojJOkDqJTM-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 18+ Years ]" /></td>
+			<td><input id="dDXIyWdnI39-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 18+ Years ]" /></td>
+			<td><input id="SUEaMdhTRhm-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 18+ Years ]" /></td>
+			<td><input id="xWwlFJWtQmH-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 18+ Years ]" /></td>
+			<td><input id="FojJOkDqJTM-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 18+ Years ]" /></td>
+			<td><input id="dDXIyWdnI39-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 18+ Years ]" /></td>
+			<td><input id="SUEaMdhTRhm-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 18+ Years ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">PBFW</td>
+			<td class="shaded"><input id="xWwlFJWtQmH-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, PBFW" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, PBFW ]" disabled/></td>
+			<td class="shaded"><input id="FojJOkDqJTM-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Male, PBFW" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Male, PBFW ]" disabled/></td>
+			<td class="shaded"><input id="dDXIyWdnI39-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, PBFW" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, PBFW ]" disabled/></td>
+			<td class="shaded"><input id="SUEaMdhTRhm-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, PBFW" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, PBFW ]" disabled/></td>
+			<td><input id="xWwlFJWtQmH-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, PBFW" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, PBFW ]" /></td>
+			<td><input id="FojJOkDqJTM-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Female, PBFW" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Female, PBFW ]" /></td>
+			<td><input id="dDXIyWdnI39-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, PBFW" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, PBFW ]" /></td>
+			<td><input id="SUEaMdhTRhm-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, PBFW" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, PBFW ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">18 &ndash; 19 Years</td>
+			<td><input id="xWwlFJWtQmH-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Male, 18-19 Years ]" /></td>
+			<td><input id="FojJOkDqJTM-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Male, 18-19 Years ]" /></td>
+			<td><input id="dDXIyWdnI39-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Male, 18-19 Years ]" /></td>
+			<td><input id="SUEaMdhTRhm-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Male, 18-19 Years ]" /></td>
+			<td><input id="xWwlFJWtQmH-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number with MAM_HIV +ve  Female, 18-19 Years ]" /></td>
+			<td><input id="FojJOkDqJTM-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number with MAM_TB +ve  Female, 18-19 Years ]" /></td>
+			<td><input id="dDXIyWdnI39-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number with MAM_TB/HIV Coinfected  Female, 18-19 Years ]" /></td>
+			<td><input id="SUEaMdhTRhm-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number with MAM_Gen Pop  Female, 18-19 Years ]" /></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<!-- Nutrition Diagnosis - At Risk / Overweight/Obese -->
+
+<div class="table-block">
+<table class="form-table">
+	<tbody>
+		<tr>
+			<td class="tbl-title" colspan="10">NUTRITION DIAGNOSIS</td>
+		</tr>
+		<tr>
+			<td class="col-hdr" rowspan="2">Diagnosis</td>
+			<td class="col-hdr" rowspan="2">Gender</td>
+			<td class="col-hdr">0-5<br />
+			Months</td>
+			<td class="col-hdr">6 &ndash; 59<br />
+			Months</td>
+			<td class="col-hdr">5-9<br />
+			Years</td>
+			<td class="col-hdr">10-17<br />
+			Years</td>
+			<td class="col-hdr">18+<br />
+			Years</td>
+			<td class="col-hdr">PBFW</td>
+			<td class="col-hdr">18 &ndash; 19<br />
+			Years</td>
+			<td class="col-hdr">Total</td>
+		</tr>
+		<tr>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label-bold" rowspan="2">At Risk</td>
+			<td class="row-label">Male</td>
+			<td><input id="hRclZUuVrvC-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 0-5 Months ]" /></td>
+			<td><input id="hRclZUuVrvC-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 6-59 Months ]" /></td>
+			<td><input id="hRclZUuVrvC-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 5-9 Years ]" /></td>
+			<td><input id="hRclZUuVrvC-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 10-17 yrs ]" /></td>
+			<td><input id="hRclZUuVrvC-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 18+ Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 18+ Years ]" /></td>
+			<td><input id="hRclZUuVrvC-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, PBFW" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, PBFW ]" /></td>
+			<td><input id="hRclZUuVrvC-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Male, 18-19 Years ]" /></td>
+			<td><input id="indicatorO7KdLTcRPpU" indicatorid="O7KdLTcRPpU" name="indicator" readonly="readonly" title="MOH_733B_Rev_2026 Nutrition Diagnosis At Risk Male Total" value="[ MOH_733B_Rev_2026 Nutrition Diagnosis At Risk Male Total ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">Female</td>
+			<td><input id="hRclZUuVrvC-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 0-5 Months ]" /></td>
+			<td><input id="hRclZUuVrvC-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 6-59 Months ]" /></td>
+			<td><input id="hRclZUuVrvC-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 5-9 Years ]" /></td>
+			<td><input id="hRclZUuVrvC-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 10-17 yrs ]" /></td>
+			<td><input id="hRclZUuVrvC-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 18+ Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 18+ Years ]" /></td>
+			<td><input id="hRclZUuVrvC-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, PBFW" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, PBFW ]" /></td>
+			<td><input id="hRclZUuVrvC-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_At risk  Female, 18-19 Years ]" /></td>
+			<td><input id="indicatorRHBfc6k7UpC" indicatorid="RHBfc6k7UpC" name="indicator" readonly="readonly" title="MOH_733B_Rev_2026 Nutrition Diagnosis At Risk Female Total" value="[ MOH_733B_Rev_2026 Nutrition Diagnosis At Risk Female Total ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label-bold" rowspan="2">Overweight/<br />
+			Obese</td>
+			<td class="row-label">Male</td>
+			<td><input id="LgbPH1hRIfz-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 0-5 Months ]" /></td>
+			<td><input id="LgbPH1hRIfz-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 6-59 Months ]" /></td>
+			<td><input id="LgbPH1hRIfz-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 5-9 Years ]" /></td>
+			<td><input id="LgbPH1hRIfz-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 10-17 yrs ]" /></td>
+			<td><input id="LgbPH1hRIfz-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 18+ Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 18+ Years ]" /></td>
+			<td><input id="LgbPH1hRIfz-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, PBFW" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, PBFW ]" /></td>
+			<td><input id="LgbPH1hRIfz-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Male, 18-19 Years ]" /></td>
+			<td><input id="indicatorqiA3GPT9Fkv" indicatorid="qiA3GPT9Fkv" name="indicator" readonly="readonly" title="MOH_733B_Rev_2026 Nutrition Diagnosis Overweight/Obese Male Total" value="[ MOH_733B_Rev_2026 Nutrition Diagnosis Overweight/Obese Male Total ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">Female</td>
+			<td><input id="LgbPH1hRIfz-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 0-5 Months ]" /></td>
+			<td><input id="LgbPH1hRIfz-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 6-59 Months ]" /></td>
+			<td><input id="LgbPH1hRIfz-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 5-9 Years ]" /></td>
+			<td><input id="LgbPH1hRIfz-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 10-17 yrs ]" /></td>
+			<td><input id="LgbPH1hRIfz-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 18+ Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 18+ Years ]" /></td>
+			<td><input id="LgbPH1hRIfz-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, PBFW" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, PBFW ]" /></td>
+			<td><input id="LgbPH1hRIfz-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Nutrition diagnosis_Overweight/Obese  Female, 18-19 Years ]" /></td>
+			<td><input id="indicatorLqABl3eJDCr" indicatorid="LqABl3eJDCr" name="indicator" readonly="readonly" title="MOH_733B_Rev_2026 Nutrition Diagnosis Overweight/Obese Female Total" value="[ MOH_733B_Rev_2026 Nutrition Diagnosis Overweight/Obese Female Total ]" /></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+<!-- /tab-2 --><!-- ═══════════════════════ TAB 3 ═══════════════════════ -->
+
+<div class="tab-content" id="tab-3"><!-- SAM Therapeutic -->
+<div class="table-block">
+<table class="form-table">
+	<tbody>
+		<tr>
+			<td class="tbl-title" colspan="10">
+			<div><span style="font-size:11.04pt"><span style="font-family:'Calibri-Light'"><span style="font-weight:bold">Number SAM Receiving Therapeutic Foods</span></span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-hdr" rowspan="2">Age</td>
+			<td class="col-hdr-sub" colspan="4"><span style="color:#ffffff;">Male</span></td>
+			<td class="col-hdr-sub" colspan="4"><span style="color:#ffffff;">Female</span></td>
+		</tr>
+		<tr>
+			<td class="col-hdr">HIV +ve</td>
+			<td class="col-hdr">TB +ve</td>
+			<td class="col-hdr">TB/HIV Coinfected</td>
+			<td class="col-hdr">Gen Pop</td>
+			<td class="col-hdr">HIV +ve</td>
+			<td class="col-hdr">TB +ve</td>
+			<td class="col-hdr">TB/HIV Coinfected</td>
+			<td class="col-hdr">Gen Pop</td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">0-5 Months</td>
+			<td><input id="ihwmZKs5Si0-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 0-5 Months ]" /></td>
+			<td><input id="JxdYLifeueR-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 0-5 Months ]" /></td>
+			<td><input id="xQcmTnNypSM-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 0-5 Months ]" /></td>
+			<td><input id="r0tmyuwaQw0-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 0-5 Months ]" /></td>
+			<td><input id="ihwmZKs5Si0-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 0-5 Months ]" /></td>
+			<td><input id="JxdYLifeueR-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 0-5 Months ]" /></td>
+			<td><input id="xQcmTnNypSM-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 0-5 Months ]" /></td>
+			<td><input id="r0tmyuwaQw0-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 0-5 Months ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">6-59 Months</td>
+			<td><input id="ihwmZKs5Si0-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 6-59 Months ]" /></td>
+			<td><input id="JxdYLifeueR-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 6-59 Months ]" /></td>
+			<td><input id="xQcmTnNypSM-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 6-59 Months ]" /></td>
+			<td><input id="r0tmyuwaQw0-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 6-59 Months ]" /></td>
+			<td><input id="ihwmZKs5Si0-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 6-59 Months ]" /></td>
+			<td><input id="JxdYLifeueR-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 6-59 Months ]" /></td>
+			<td><input id="xQcmTnNypSM-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 6-59 Months ]" /></td>
+			<td><input id="r0tmyuwaQw0-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 6-59 Months ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">5-9 Years</td>
+			<td><input id="ihwmZKs5Si0-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 5-9 Years ]" /></td>
+			<td><input id="JxdYLifeueR-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 5-9 Years ]" /></td>
+			<td><input id="xQcmTnNypSM-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 5-9 Years ]" /></td>
+			<td><input id="r0tmyuwaQw0-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 5-9 Years ]" /></td>
+			<td><input id="ihwmZKs5Si0-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 5-9 Years ]" /></td>
+			<td><input id="JxdYLifeueR-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 5-9 Years ]" /></td>
+			<td><input id="xQcmTnNypSM-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 5-9 Years ]" /></td>
+			<td><input id="r0tmyuwaQw0-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 5-9 Years ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">10-17 Years</td>
+			<td><input id="ihwmZKs5Si0-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 10-17 yrs ]" /></td>
+			<td><input id="JxdYLifeueR-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 10-17 yrs ]" /></td>
+			<td><input id="xQcmTnNypSM-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 10-17 yrs ]" /></td>
+			<td><input id="r0tmyuwaQw0-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 10-17 yrs ]" /></td>
+			<td><input id="ihwmZKs5Si0-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 10-17 yrs ]" /></td>
+			<td><input id="JxdYLifeueR-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 10-17 yrs ]" /></td>
+			<td><input id="xQcmTnNypSM-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 10-17 yrs ]" /></td>
+			<td><input id="r0tmyuwaQw0-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 10-17 yrs ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">18+ Years</td>
+			<td><input id="ihwmZKs5Si0-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 18+ Years ]" /></td>
+			<td><input id="JxdYLifeueR-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 18+ Years ]" /></td>
+			<td><input id="xQcmTnNypSM-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 18+ Years ]" /></td>
+			<td><input id="r0tmyuwaQw0-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 18+ Years ]" /></td>
+			<td><input id="ihwmZKs5Si0-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 18+ Years ]" /></td>
+			<td><input id="JxdYLifeueR-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 18+ Years ]" /></td>
+			<td><input id="xQcmTnNypSM-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 18+ Years ]" /></td>
+			<td><input id="r0tmyuwaQw0-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 18+ Years ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">PBFW</td>
+			<td class="shaded"><input id="ihwmZKs5Si0-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, PBFW" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="JxdYLifeueR-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, PBFW" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="xQcmTnNypSM-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, PBFW" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="r0tmyuwaQw0-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, PBFW" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="ihwmZKs5Si0-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, PBFW" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="JxdYLifeueR-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, PBFW" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="xQcmTnNypSM-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, PBFW" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="r0tmyuwaQw0-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, PBFW" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, PBFW ]" disabled /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">18 &ndash; 19 Years</td>
+			<td><input id="ihwmZKs5Si0-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Male, 18-19 Years ]" /></td>
+			<td><input id="JxdYLifeueR-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Male, 18-19 Years ]" /></td>
+			<td><input id="xQcmTnNypSM-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Male, 18-19 Years ]" /></td>
+			<td><input id="r0tmyuwaQw0-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Male, 18-19 Years ]" /></td>
+			<td><input id="ihwmZKs5Si0-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_HIV +ve  Female, 18-19 Years ]" /></td>
+			<td><input id="JxdYLifeueR-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB +ve  Female, 18-19 Years ]" /></td>
+			<td><input id="xQcmTnNypSM-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_TB/HIV 
+Coinfected  Female, 18-19 Years ]" /></td>
+			<td><input id="r0tmyuwaQw0-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number SAM Receiving Therapeutic Foods_Gen 
+Pop  Female, 18-19 Years ]" /></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<!-- MAM Supplementary -->
+
+<div class="table-block">
+<table class="form-table">
+	<tbody>
+		<tr>
+			<td class="tbl-title" colspan="10">Number MAM Receiving Supplementary Foods</td>
+		</tr>
+		<tr>
+			<td class="col-hdr" rowspan="2">Age</td>
+			<td class="col-hdr-sub" colspan="4">Male</td>
+			<td class="col-hdr-sub" colspan="4">Female</td>
+		</tr>
+		<tr>
+			<td class="col-hdr">HIV +ve</td>
+			<td class="col-hdr">TB +ve</td>
+			<td class="col-hdr">TB/HIV Coinfected</td>
+			<td class="col-hdr">Gen Pop</td>
+			<td class="col-hdr">HIV +ve</td>
+			<td class="col-hdr">TB +ve</td>
+			<td class="col-hdr">TB/HIV Coinfected</td>
+			<td class="col-hdr">Gen Pop</td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">0-5 Months</td>
+			<td class="shaded"><input id="Xmn3ToFOSvK-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 0-5 Months ]" disabled/></td>
+			<td class="shaded"><input id="NAuozO3yg0a-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 0-5 Months ]" disabled/></td>
+			<td class="shaded"><input id="i8omFPFdMij-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 0-5 Months ]" disabled/></td>
+			<td class="shaded"><input id="qnXj6DCPTHg-qeQzfWGfDKS-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 0-5 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 0-5 Months ]" disabled/></td>
+			<td class="shaded"><input id="Xmn3ToFOSvK-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, 0-5 Months ]" disabled/></td>
+			<td class="shaded"><input id="NAuozO3yg0a-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 0-5 Months ]" disabled/></td>
+			<td class="shaded"><input id="i8omFPFdMij-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 0-5 Months ]" disabled/></td>
+			<td class="shaded"><input id="qnXj6DCPTHg-B06rmxMP2Wt-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 0-5 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 0-5 Months ]" disabled/></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">6-59 Months</td>
+			<td><input id="Xmn3ToFOSvK-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 6-59 Months ]" /></td>
+			<td><input id="NAuozO3yg0a-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 6-59 Months ]" /></td>
+			<td><input id="i8omFPFdMij-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 6-59 Months ]" /></td>
+			<td><input id="qnXj6DCPTHg-MAmw4FtMroH-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 6-59 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 6-59 Months ]" /></td>
+			<td><input id="NAuozO3yg0a-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 6-59 Months ]" /></td>
+			<td><input id="NAuozO3yg0a-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 6-59 Months ]" /></td>
+			<td><input id="i8omFPFdMij-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 6-59 Months ]" /></td>
+			<td><input id="qnXj6DCPTHg-efAgzvpc3Y9-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 6-59 Months" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 6-59 Months ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">5-9 Years</td>
+			<td><input id="Xmn3ToFOSvK-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 5-9 Years ]" /></td>
+			<td><input id="NAuozO3yg0a-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 5-9 Years ]" /></td>
+			<td><input id="i8omFPFdMij-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 5-9 Years ]" /></td>
+			<td><input id="qnXj6DCPTHg-v5hOlmnBPAy-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 5-9 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 5-9 Years ]" /></td>
+			<td><input id="Xmn3ToFOSvK-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, 5-9 Years ]" /></td>
+			<td><input id="NAuozO3yg0a-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 5-9 Years ]" /></td>
+			<td><input id="i8omFPFdMij-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 5-9 Years ]" /></td>
+			<td><input id="qnXj6DCPTHg-Ju7Qh4BfjQg-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 5-9 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 5-9 Years ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">10-17 Years</td>
+			<td><input id="Xmn3ToFOSvK-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 10-17 yrs ]" /></td>
+			<td><input id="NAuozO3yg0a-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 10-17 yrs ]" /></td>
+			<td><input id="i8omFPFdMij-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 10-17 yrs ]" /></td>
+			<td><input id="qnXj6DCPTHg-Debu7olXQu3-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 10-17 yrs" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 10-17 yrs ]" /></td>
+			<td><input id="Xmn3ToFOSvK-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, 10-17 yrs ]" /></td>
+			<td><input id="NAuozO3yg0a-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 10-17 yrs ]" /></td>
+			<td><input id="i8omFPFdMij-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 10-17 yrs ]" /></td>
+			<td><input id="qnXj6DCPTHg-e68z4x8VJit-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 10-17 yrs" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 10-17 yrs ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">18+ Years</td>
+			<td><input id="Xmn3ToFOSvK-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 18+ Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 18+ Years ]" /></td>
+			<td><input id="NAuozO3yg0a-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 18+ Years ]" /></td>
+			<td><input id="i8omFPFdMij-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 18+ Years ]" /></td>
+			<td><input id="qnXj6DCPTHg-uSKNabSJH5t-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 18+ Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 18+ Years ]" /></td>
+			<td><input id="Xmn3ToFOSvK-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, 18+ Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, 18+ Years ]" /></td>
+			<td><input id="NAuozO3yg0a-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 18+ Years ]" /></td>
+			<td><input id="i8omFPFdMij-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 18+ Years ]" /></td>
+			<td><input id="qnXj6DCPTHg-JX0t3g1Ds8W-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 18+ Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 18+ Years ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">PBFW</td>
+			<td class="shaded"><input id="Xmn3ToFOSvK-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, PBFW" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="NAuozO3yg0a-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, PBFW" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="i8omFPFdMij-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, PBFW" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, PBFW ]" disabled /></td>
+			<td class="shaded"><input id="qnXj6DCPTHg-pJCAABcTzY1-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, PBFW" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, PBFW ]" disabled /></td>
+			<td><input id="Xmn3ToFOSvK-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, PBFW" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, PBFW ]" /></td>
+			<td><input id="NAuozO3yg0a-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, PBFW" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, PBFW ]" /></td>
+			<td><input id="i8omFPFdMij-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, PBFW" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, PBFW ]" /></td>
+			<td><input id="qnXj6DCPTHg-olGwdStSuzw-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, PBFW" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, PBFW ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">18 &ndash; 19 Years</td>
+			<td><input id="Xmn3ToFOSvK-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Male, 18-19 Years ]" /></td>
+			<td><input id="NAuozO3yg0a-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Male, 18-19 Years ]" /></td>
+			<td><input id="i8omFPFdMij-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Male, 18-19 Years ]" /></td>
+			<td><input id="qnXj6DCPTHg-eozCX0vG711-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 18-19 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Male, 18-19 Years ]" /></td>
+			<td><input id="Xmn3ToFOSvK-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_HIV 
++ve   Female, 18-19 Years ]" /></td>
+			<td><input id="NAuozO3yg0a-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Food_TB 
++ve  Female, 18-19 Years ]" /></td>
+			<td><input id="i8omFPFdMij-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_TB/HIV 
+Coinfected  Female, 18-19 Years ]" /></td>
+			<td><input id="qnXj6DCPTHg-QiXdU2gPTBu-val" name="entryfield" title="MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 18-19 Years" value="[ MOH 733_Rev 2026_Number MAM Receiving Supplementary Foods_Gen 
+Pop  Female, 18-19 Years ]" /></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+<!-- /tab-3 --><!-- ═══════════════════════ TAB 4 ═══════════════════════ -->
+
+<div class="tab-content" id="tab-4">
+<div class="table-block">
+<table class="form-table">
+	<tbody>
+		<tr>
+			<td class="tbl-title" colspan="9">MICRONUTRIENT INTERVENTION</td>
+		</tr>
+		<tr>
+			<td class="col-hdr">Micronutrient</td>
+			<td class="col-hdr">0-5<br />
+			Months</td>
+			<td class="col-hdr">6 &ndash; 59<br />
+			Months</td>
+			<td class="col-hdr">5-9<br />
+			Years</td>
+			<td class="col-hdr">10-17<br />
+			Years</td>
+			<td class="col-hdr">18+<br />
+			Years</td>
+			<td class="col-hdr">PBFW</td>
+			<td class="col-hdr">18 &ndash; 19<br />
+			Years</td>
+			<td class="col-hdr">Total</td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">Vitamin A Therapeutic</td>
+			<td class="shaded"><input id="NrRk20xK5i5-cWglZ6BOkip-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 0-5 Months" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 0-5 Months ]" disabled/></td>
+			<td><input id="NrRk20xK5i5-l56yjEr0DiT-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 6-59 Months" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 6-59 Months ]" /></td>
+			<td><input id="NrRk20xK5i5-njgwXgPP8Fg-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 5-9 Years" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 5-9 Years ]" /></td>
+			<td><input id="NrRk20xK5i5-sGjR8ih4ePR-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 10-17 yrs" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 10-17 yrs ]" /></td>
+			<td><input id="NrRk20xK5i5-FfBAR0FVxzV-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 18+ Years" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 18+ Years ]" /></td>
+			<td class="shaded"><input id="NrRk20xK5i5-znzIiWus7Sf-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic PBFW" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic PBFW ]" disabled/></td>
+			<td><input id="NrRk20xK5i5-Qi0FQhIuEgw-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 18-19 Years" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic 18-19 Years ]" /></td>
+			<td><input dataelementid="NrRk20xK5i5" id="totalNrRk20xK5i5" name="total" readonly="readonly" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin A Therapeutic ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">Vitamin B6 Therapeutic</td>
+			<td><input id="CA21eoo9DYj-cWglZ6BOkip-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 0-5 Months" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 0-5 Months ]" /></td>
+			<td><input id="CA21eoo9DYj-l56yjEr0DiT-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 6-59 Months" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 6-59 Months ]" /></td>
+			<td><input id="CA21eoo9DYj-njgwXgPP8Fg-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 5-9 Years" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 5-9 Years ]" /></td>
+			<td><input id="CA21eoo9DYj-sGjR8ih4ePR-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 10-17 yrs" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 10-17 yrs ]" /></td>
+			<td><input id="CA21eoo9DYj-FfBAR0FVxzV-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 18+ Years" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 18+ Years ]" /></td>
+			<td><input id="CA21eoo9DYj-znzIiWus7Sf-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic PBFW" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic PBFW ]" /></td>
+			<td><input id="CA21eoo9DYj-Qi0FQhIuEgw-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 18-19 Years" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic 18-19 Years ]" /></td>
+			<td><input dataelementid="CA21eoo9DYj" id="totalCA21eoo9DYj" name="total" readonly="readonly" title="MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic" value="[ MOH 733_Rev 2026_Micronutrient intervention_Vitamin B6 Therapeutic ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">Iron</td>
+			<td><input id="nfrjPHV1Kp8-cWglZ6BOkip-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Iron 0-5 Months" value="[ MOH 733_Rev 2026_Micronutrient intervention_Iron 0-5 Months ]" /></td>
+			<td><input id="nfrjPHV1Kp8-l56yjEr0DiT-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Iron 6-59 Months" value="[ MOH 733_Rev 2026_Micronutrient intervention_Iron 6-59 Months ]" /></td>
+			<td><input id="nfrjPHV1Kp8-njgwXgPP8Fg-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Iron 5-9 Years" value="[ MOH 733_Rev 2026_Micronutrient intervention_Iron 5-9 Years ]" /></td>
+			<td><input id="nfrjPHV1Kp8-sGjR8ih4ePR-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Iron 10-17 yrs" value="[ MOH 733_Rev 2026_Micronutrient intervention_Iron 10-17 yrs ]" /></td>
+			<td><input id="nfrjPHV1Kp8-FfBAR0FVxzV-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Iron 18+ Years" value="[ MOH 733_Rev 2026_Micronutrient intervention_Iron 18+ Years ]" /></td>
+			<td><input id="nfrjPHV1Kp8-znzIiWus7Sf-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Iron PBFW" value="[ MOH 733_Rev 2026_Micronutrient intervention_Iron PBFW ]" /></td>
+			<td><input id="nfrjPHV1Kp8-Qi0FQhIuEgw-val" name="entryfield" title="MOH 733_Rev 2026_Micronutrient intervention_Iron 18-19 Years" value="[ MOH 733_Rev 2026_Micronutrient intervention_Iron 18-19 Years ]" /></td>
+			<td><input dataelementid="nfrjPHV1Kp8" id="totalnfrjPHV1Kp8" name="total" readonly="readonly" title="MOH 733_Rev 2026_Micronutrient intervention_Iron" value="[ MOH 733_Rev 2026_Micronutrient intervention_Iron ]" /></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+<!-- /tab-4 --><!-- ═══════════════════════ TAB 5 ═══════════════════════ -->
+
+<div class="tab-content" id="tab-5">
+<div class="table-block">
+<table class="form-table">
+	<tbody>
+		<tr>
+			<td class="tbl-title" colspan="9">TREATMENT OUTCOME</td>
+		</tr>
+		<tr>
+			<td class="col-hdr">Outcomes</td>
+			<td class="col-hdr">0-5<br />
+			Months</td>
+			<td class="col-hdr">6 &ndash; 59<br />
+			Months</td>
+			<td class="col-hdr">5-9<br />
+			Years</td>
+			<td class="col-hdr">10-17<br />
+			Years</td>
+			<td class="col-hdr">18+<br />
+			Years</td>
+			<td class="col-hdr">PBFW</td>
+			<td class="col-hdr">18 &ndash; 19<br />
+			Years</td>
+			<td class="col-hdr">Total</td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">Cured</td>
+			<td><input id="FwUdP0p78Vc-cWglZ6BOkip-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Cured 0-5 Months" value="[ MOH 733_Rev 2026_Treatment outcome_Cured 0-5 Months ]" /></td>
+			<td><input id="FwUdP0p78Vc-l56yjEr0DiT-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Cured 6-59 Months" value="[ MOH 733_Rev 2026_Treatment outcome_Cured 6-59 Months ]" /></td>
+			<td><input id="FwUdP0p78Vc-njgwXgPP8Fg-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Cured 5-9 Years" value="[ MOH 733_Rev 2026_Treatment outcome_Cured 5-9 Years ]" /></td>
+			<td><input id="FwUdP0p78Vc-sGjR8ih4ePR-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Cured 10-17 yrs" value="[ MOH 733_Rev 2026_Treatment outcome_Cured 10-17 yrs ]" /></td>
+			<td><input id="FwUdP0p78Vc-FfBAR0FVxzV-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Cured 18+ Years" value="[ MOH 733_Rev 2026_Treatment outcome_Cured 18+ Years ]" /></td>
+			<td><input id="FwUdP0p78Vc-znzIiWus7Sf-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Cured PBFW" value="[ MOH 733_Rev 2026_Treatment outcome_Cured PBFW ]" /></td>
+			<td><input id="FwUdP0p78Vc-Qi0FQhIuEgw-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Cured 18-19 Years" value="[ MOH 733_Rev 2026_Treatment outcome_Cured 18-19 Years ]" /></td>
+			<td><input dataelementid="FwUdP0p78Vc" id="totalFwUdP0p78Vc" name="total" readonly="readonly" title="MOH 733_Rev 2026_Treatment outcome_Cured" value="[ MOH 733_Rev 2026_Treatment outcome_Cured ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">Defaulted</td>
+			<td><input id="LjYo0rPNXoE-cWglZ6BOkip-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Defaulted 0-5 Months" value="[ MOH 733_Rev 2026_Treatment outcome_Defaulted 0-5 Months ]" /></td>
+			<td><input id="LjYo0rPNXoE-l56yjEr0DiT-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Defaulted 6-59 Months" value="[ MOH 733_Rev 2026_Treatment outcome_Defaulted 6-59 Months ]" /></td>
+			<td><input id="LjYo0rPNXoE-njgwXgPP8Fg-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Defaulted 5-9 Years" value="[ MOH 733_Rev 2026_Treatment outcome_Defaulted 5-9 Years ]" /></td>
+			<td><input id="LjYo0rPNXoE-sGjR8ih4ePR-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Defaulted 10-17 yrs" value="[ MOH 733_Rev 2026_Treatment outcome_Defaulted 10-17 yrs ]" /></td>
+			<td><input id="LjYo0rPNXoE-FfBAR0FVxzV-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Defaulted 18+ Years" value="[ MOH 733_Rev 2026_Treatment outcome_Defaulted 18+ Years ]" /></td>
+			<td><input id="LjYo0rPNXoE-znzIiWus7Sf-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Defaulted PBFW" value="[ MOH 733_Rev 2026_Treatment outcome_Defaulted PBFW ]" /></td>
+			<td><input id="LjYo0rPNXoE-Qi0FQhIuEgw-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Defaulted 18-19 Years" value="[ MOH 733_Rev 2026_Treatment outcome_Defaulted 18-19 Years ]" /></td>
+			<td><input dataelementid="LjYo0rPNXoE" id="totalLjYo0rPNXoE" name="total" readonly="readonly" title="MOH 733_Rev 2026_Treatment outcome_Defaulted" value="[ MOH 733_Rev 2026_Treatment outcome_Defaulted ]" /></td>
+		</tr>
+		<tr class="row-odd">
+			<td class="row-label">Died</td>
+			<td><input id="B3K3C1DZWEA-cWglZ6BOkip-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Died 0-5 Months" value="[ MOH 733_Rev 2026_Treatment outcome_Died 0-5 Months ]" /></td>
+			<td><input id="B3K3C1DZWEA-l56yjEr0DiT-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Died 6-59 Months" value="[ MOH 733_Rev 2026_Treatment outcome_Died 6-59 Months ]" /></td>
+			<td><input id="B3K3C1DZWEA-njgwXgPP8Fg-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Died 5-9 Years" value="[ MOH 733_Rev 2026_Treatment outcome_Died 5-9 Years ]" /></td>
+			<td><input id="B3K3C1DZWEA-sGjR8ih4ePR-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Died 10-17 yrs" value="[ MOH 733_Rev 2026_Treatment outcome_Died 10-17 yrs ]" /></td>
+			<td><input id="B3K3C1DZWEA-FfBAR0FVxzV-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Died 18+ Years" value="[ MOH 733_Rev 2026_Treatment outcome_Died 18+ Years ]" /></td>
+			<td><input id="B3K3C1DZWEA-znzIiWus7Sf-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Died PBFW" value="[ MOH 733_Rev 2026_Treatment outcome_Died PBFW ]" /></td>
+			<td><input id="B3K3C1DZWEA-Qi0FQhIuEgw-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Died 18-19 Years" value="[ MOH 733_Rev 2026_Treatment outcome_Died 18-19 Years ]" /></td>
+			<td><input dataelementid="B3K3C1DZWEA" id="totalB3K3C1DZWEA" name="total" readonly="readonly" title="MOH 733_Rev 2026_Treatment outcome_Died" value="[ MOH 733_Rev 2026_Treatment outcome_Died ]" /></td>
+		</tr>
+		<tr class="row-even">
+			<td class="row-label">Non-Recovered</td>
+			<td><input id="uCl2e9DzZfh-cWglZ6BOkip-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Non -Recovered 0-5 Months" value="[ MOH 733_Rev 2026_Treatment outcome_Non -Recovered 0-5 Months ]" /></td>
+			<td><input id="uCl2e9DzZfh-l56yjEr0DiT-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Non -Recovered 6-59 Months" value="[ MOH 733_Rev 2026_Treatment outcome_Non -Recovered 6-59 Months ]" /></td>
+			<td><input id="uCl2e9DzZfh-njgwXgPP8Fg-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Non -Recovered 5-9 Years" value="[ MOH 733_Rev 2026_Treatment outcome_Non -Recovered 5-9 Years ]" /></td>
+			<td><input id="uCl2e9DzZfh-sGjR8ih4ePR-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Non -Recovered 10-17 yrs" value="[ MOH 733_Rev 2026_Treatment outcome_Non -Recovered 10-17 yrs ]" /></td>
+			<td><input id="uCl2e9DzZfh-Qi0FQhIuEgw-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Non -Recovered 18-19 Years" value="[ MOH 733_Rev 2026_Treatment outcome_Non -Recovered 18-19 Years ]" /></td>
+			<td><input id="uCl2e9DzZfh-znzIiWus7Sf-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Non -Recovered PBFW" value="[ MOH 733_Rev 2026_Treatment outcome_Non -Recovered PBFW ]" /></td>
+			<td><input id="uCl2e9DzZfh-FfBAR0FVxzV-val" name="entryfield" title="MOH 733_Rev 2026_Treatment outcome_Non -Recovered 18+ Years" value="[ MOH 733_Rev 2026_Treatment outcome_Non -Recovered 18+ Years ]" /></td>
+			<td><input dataelementid="uCl2e9DzZfh" id="totaluCl2e9DzZfh" name="total" readonly="readonly" title="MOH 733_Rev 2026_Treatment outcome_Non -Recovered" value="[ MOH 733_Rev 2026_Treatment outcome_Non -Recovered ]" /></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+<!-- /tab-5 --></div>
+<!-- /#tabs -->
+
+<p>&nbsp;</p>
