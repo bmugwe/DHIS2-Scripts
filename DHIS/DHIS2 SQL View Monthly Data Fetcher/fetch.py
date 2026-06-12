@@ -41,19 +41,19 @@ CONFIG = {
     "password": os.getenv("KHIS_PASSWORD", ""),
 
     # Date range (inclusive, by year)
-    "year_start": 2024,
+    "year_start": 2014,
     "year_end":   2026,
 
     # Concurrency: number of parallel month-requests per year
     # Keep ≤ 6 to be respectful to the DHIS2 server
-    "max_workers": 6,
+    "max_workers": 10,
 
     # Retry settings
     "max_retries": 3,
     "retry_delay_seconds": 5,
 
     # Output directory
-    "output_dir": "HTS Data Benzer",
+    "output_dir": "Elvis Kirui",
 
     # Request timeout in seconds
     "timeout": 120,
@@ -62,7 +62,7 @@ CONFIG = {
     "page_size": 100000,
     
     # Dataset Name
-    "dataset_name": "HTS Data Benzer",
+    "dataset_name": "MoH_717_service_load",
 }
 # ─────────────────────────────────────────────
 
