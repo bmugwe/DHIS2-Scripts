@@ -7,9 +7,12 @@ import time
 import json
 from datetime import datetime
 
+ppms_base_url =  os.getenv("PPMS_URL")
+HISTRACKER_URL = os.getenv("HISTRACKER_URL")
+
 # data = pd.read_csv("mpdsr with data only 2023-2024 unpivot.csv")
 
-ppms_url = 'https://partnermanagementsystem.uonbi.ac.ke/api/dataValueSets'
+ppms_url = f'{ppms_base_url}/api/dataValueSets'
 
 his_payload = {
   "dataValues": []
@@ -64,7 +67,7 @@ ptime = "2024W42;2024W43;2024W44;2024W45;2024W46;2024W47;2024W48"
 
 
 def readTracker(period, orguni, data_elements):
-    url = f"https://histracker.health.go.ke/api/32/analytics.json?dimension=ou:HfVjCurKxh2;LEVEL-t9kwHRyMyOC&dimension=dx:{data_elements}&dimension=pe:{period}&outputIdScheme=UID"
+    url = f"{HISTRACKER_URL}/api/32/analytics.json?dimension=ou:HfVjCurKxh2;LEVEL-t9kwHRyMyOC&dimension=dx:{data_elements}&dimension=pe:{period}&outputIdScheme=UID"
     # url = f"http://144.91.119.106:8084/api/32/analytics.json?dimension=ou:HfVjCurKxh2;LEVEL-t9kwHRyMyOC&dimension=dx:{data_elements}&dimension=pe:{period}&outputIdScheme=UID"
     
     print(url)

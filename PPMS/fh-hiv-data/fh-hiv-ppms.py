@@ -3,6 +3,8 @@ import pandas as pd
 import sys
 import os
 
+KHIS_URL = os.getenv("KHIS_URL")
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 from password import encodePassword
 
@@ -24,7 +26,7 @@ ppms_creds = encodePassword(os.getenv("ppms_username"), os.getenv("ppms_password
 
 def fetchData(uid, creds,period=[]):
     params = {}
-    urls = "https://hiskenya.org/api/sqlViews/bEz5t8O8JWi/data.json?var=groupuid:{}&var=pstart:{}&var=pend:{}".format(uid, period[0], period[1])
+    urls = f"{KHIS_URL}/api/sqlViews/bEz5t8O8JWi/data.json?var=groupuid:{uid}&var=pstart:{period[0]}&var=pend:{period[1]}"
     try:
         data = request("GET", url=urls, params=params, headers=creds)
         print(data.text)

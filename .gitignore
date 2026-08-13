@@ -1,6 +1,17 @@
 .history
-
 .history/*
+
+.azad
+.azad/*
+
+.history
+.history/*
+
+.venv/
+.venv/*
+
+.vscode/
+.vscode/*
 
 *.csv
 
@@ -24,3 +35,11 @@ SWAZI/venv/*
 
 DHIS/Download DHIS Data using dataelement group/2023
 DHIS/Download DHIS Data using dataelement group/2023/*
+
+SCTG/
+SCTG/*
+
+
+# output folders
+DHIS/DHIS2-Scripts/DHIS/DHIS2 SQL View Monthly Data Fetcher/outputs
+DHIS/DHIS2-Scripts/DHIS/DHIS2 SQL View Monthly Data Fetcher/outputs/*

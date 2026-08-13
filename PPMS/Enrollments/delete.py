@@ -7,7 +7,9 @@ import requests
 import base64
 import os
 
-instance = "https://ento.uonbi.ac.ke"
+ENTO_URL = os.getenv("ENTO_URL")
+
+instance = ENTO_URL
 programids = ['Oj5hUu2m0gP','Mk9ocCvATwK','JdBxRPxRWpD','wWNCJjNQDGq','GNIPmRNe57d']
 
 fetch_url = "{}/api/enrollments?ou=HfVjCurKxh2&ouMode=ACCESSIBLE&program={}"

@@ -41,8 +41,8 @@ CONFIG = {
     "password": os.getenv("KHIS_PASSWORD", ""),
 
     # Date range (inclusive, by year)
-    "year_start": 2014,
-    "year_end":   2026,
+    "year_start": 2020,
+    "year_end":   2022,
 
     # Concurrency: number of parallel month-requests per year
     # Keep ≤ 6 to be respectful to the DHIS2 server
@@ -53,7 +53,7 @@ CONFIG = {
     "retry_delay_seconds": 5,
 
     # Output directory
-    "output_dir": "Elvis Kirui",
+    "output_dir": "Dr Kyalo",
 
     # Request timeout in seconds
     "timeout": 120,
@@ -62,7 +62,7 @@ CONFIG = {
     "page_size": 100000,
     
     # Dataset Name
-    "dataset_name": "MoH_717_service_load",
+    "dataset_name": "MoH_710_immunisation_data",
 }
 # ─────────────────────────────────────────────
 

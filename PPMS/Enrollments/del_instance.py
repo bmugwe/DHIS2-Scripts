@@ -2,7 +2,9 @@ import requests
 import base64
 import os
 
-instance = "https://ento.uonbi.ac.ke"
+ENTO_URL = os.getenv("ENTO_URL")
+
+instance = ENTO_URL
 instances = ['hPK6OJZf7JJ','qIKI1C8qgbn','C58YfJBJfI5','FIWnBUqxAAa']
 
 fetch_url = "{}/api/trackedEntityInstances?trackedEntityType={}&ou=HfVjCurKxh2&ouMode=ACCESSIBLE"

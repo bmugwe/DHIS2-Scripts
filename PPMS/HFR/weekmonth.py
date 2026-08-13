@@ -6,6 +6,8 @@ import io
 import base64
 import os
 
+PPMS_URL = os.getenv("PPMS_URL")
+
 
 
 # month_attribute = [hfr_month, activeyear - annual, dhismonth_to_be_updated] chnage this to the month being updated, next month
@@ -14,8 +16,8 @@ import os
 month_attribute = [12, 2024, "202408", "202409"]
 month_attribute = [1, 2025, "202409", "202410"]
 
-url = 'https://partnermanagementsystem.uonbi.ac.ke/api/29/analytics.json?dimension=dx:{}&dimension=lRp2LBbTuM5&dimension=ou:LEVEL-5&dimension=pe:{}&displayProperty=NAME'
-importUrl = 'https://partnermanagementsystem.uonbi.ac.ke/api/dataValueSets'
+url = f'{PPMS_URL}/api/29/analytics.json?dimension=dx:{}&dimension=lRp2LBbTuM5&dimension=ou:LEVEL-5&dimension=pe:{}&displayProperty=NAME'
+importUrl = f'{PPMS_URL}/api/dataValueSets'
 
 payload={}
 
